@@ -1,0 +1,27 @@
+2026-06-12 23:46:11,454 | asyncio                        | DEBUG | Using proactor: IocpProactor
+INFO:     Started server process [45508]
+INFO:     Waiting for application startup.
+2026-06-12 23:46:11,495 | server.harness.manager         | INFO  | Plugin registered: LoggerPlugin
+2026-06-12 23:46:11,498 | server.harness.manager         | INFO  | Plugin registered: MetricsPlugin
+2026-06-12 23:46:11,499 | server.harness.manager         | INFO  | Built-in harness plugins registered (2 plugins)
+2026-06-12 23:46:11,504 | sqlalchemy.engine.Engine       | INFO  | SELECT DATABASE()
+2026-06-12 23:46:11,513 | sqlalchemy.engine.Engine       | INFO  | [raw sql] ()
+2026-06-12 23:46:11,521 | sqlalchemy.engine.Engine       | INFO  | SELECT @@sql_mode
+2026-06-12 23:46:11,527 | sqlalchemy.engine.Engine       | INFO  | [raw sql] ()
+2026-06-12 23:46:11,533 | sqlalchemy.engine.Engine       | INFO  | SELECT @@lower_case_table_names
+2026-06-12 23:46:11,538 | sqlalchemy.engine.Engine       | INFO  | [raw sql] ()
+2026-06-12 23:46:11,545 | sqlalchemy.engine.Engine       | INFO  | BEGIN (implicit)
+2026-06-12 23:46:11,551 | sqlalchemy.engine.Engine       | INFO  | DESCRIBE `code_review_bot`.`repositories`
+2026-06-12 23:46:11,555 | sqlalchemy.engine.Engine       | INFO  | [raw sql] ()
+2026-06-12 23:46:11,571 | sqlalchemy.engine.Engine       | INFO  | DESCRIBE `code_review_bot`.`review_sessions`
+2026-06-12 23:46:11,577 | sqlalchemy.engine.Engine       | INFO  | [raw sql] ()
+2026-06-12 23:46:11,585 | sqlalchemy.engine.Engine       | INFO  | DESCRIBE `code_review_bot`.`review_findings`
+2026-06-12 23:46:11,591 | sqlalchemy.engine.Engine       | INFO  | [raw sql] ()
+2026-06-12 23:46:11,597 | sqlalchemy.engine.Engine       | INFO  | COMMIT
+2026-06-12 23:46:11,603 | server.main                    | INFO  | Database tables created
+2026-06-12 23:46:11,604 | server.main                    | INFO  | Harness plugins: 2 registered
+2026-06-12 23:46:11,607 | server.main                    | INFO  | AI Code Review Bot ready (env=development)
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
