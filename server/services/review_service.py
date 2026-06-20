@@ -236,9 +236,14 @@ class ReviewService:
                 f"{c} {s}" for s, c in severity_counts.items() if c > 0
             ]
             mode_label = "Δ" if incremental_diff else ""
+            # Chinese severity labels
+            sev_cn = {"critical": "严重", "high": "高危", "medium": "中危", "low": "低危", "info": "提示"}
+            summary_parts_cn = [
+                f"{sev_cn.get(s, s)}{c}个" for s, c in severity_counts.items() if c > 0
+            ]
             session.summary = (
-                f"{mode_label}Code review found {len(verified_findings)} issue(s): "
-                + (", ".join(summary_parts) if summary_parts else "none")
+                f"{mode_label}代码审查发现 {len(verified_findings)} 个问题: "
+                + (", ".join(summary_parts_cn) if summary_parts_cn else "无")
             )
             session.status = "completed"
             session.completed_at = datetime.utcnow()
@@ -540,9 +545,9 @@ class ReviewService:
                 summary_body += "。\n\n"
             else:
                 summary_body = (
-                    f"## 🤖 AI Code Review\n\n"
-                    f"Found **{len(findings)}** issue(s) across "
-                    f"{session.stats.get('total_files', 0) if session.stats else 0} file(s).\n\n"
+                    f"## 🤖 AI 代码审查\n\n"
+                    f"在 {session.stats.get('total_files', 0) if session.stats else 0}"
+                    f" 个文件中发现 **{len(findings)}** 个问题。\n\n"
                 )
 
             severity_icons = {"critical": "🔴", "high": "🟠", "medium": "🟡", "low": "🟢", "info": "ℹ️"}
@@ -570,21 +575,28 @@ class ReviewService:
             )
 
     def _format_comment(self, finding: dict) -> str:
-        """Format a finding as a GitHub comment body."""
+        """Format a finding as a GitHub comment body (Chinese)."""
         severity_emoji = {
             "critical": "🔴", "high": "🟠", "medium": "🟡", "low": "🟢", "info": "ℹ️",
         }
+        sev_cn = {"critical": "严重", "high": "高危", "medium": "中危", "low": "低危", "info": "提示"}
+        reviewer_cn = {
+            "security": "安全审查", "performance": "性能审查",
+            "logic": "逻辑审查", "style": "代码风格审查",
+        }
         emoji = severity_emoji.get(finding.get("severity", "low"), "ℹ️")
+        sev_label = sev_cn.get(finding.get("severity", "low"), finding.get("severity", "low"))
+        reviewer_label = reviewer_cn.get(finding.get("reviewer_name", ""), finding.get("reviewer_name", "unknown"))
         lines = [
-            f"{emoji} **{finding.get('title', 'Issue')}** `[{finding.get('severity', 'low').upper()}]`",
+            f"{emoji} **{finding.get('title', 'Issue')}** `[{sev_label}]`",
             f"",
-            f"> 🤖 *{finding.get('reviewer_name', 'unknown')} reviewer* | `{finding.get('category', 'general')}`",
+            f"> 🤖 *{reviewer_label}* | `{finding.get('category', 'general')}`",
             f"",
-            f"**Issue:** {finding.get('description', '')}",
+            f"**问题:** {finding.get('description', '')}",
         ]
         if finding.get("suggestion"):
             lines.append(f"")
-            lines.append(f"**Suggestion:** {finding['suggestion']}")
+            lines.append(f"**建议:** {finding['suggestion']}")
         return "\n".join(lines)
 
     async def _post_review_actions(

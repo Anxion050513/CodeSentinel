@@ -33,4 +33,5 @@ Each finding must have:
 - Provide concrete, compilable fix code in your suggestion
 - If you're unsure about an issue, add a note in the description but still report it
 - Be precise about line numbers where the issue occurs
+- **ALL output text (title, description, suggestion) MUST be in Simplified Chinese (简体中文)** — code snippets and technical identifiers can remain in English
 """

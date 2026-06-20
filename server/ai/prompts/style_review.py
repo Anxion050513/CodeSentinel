@@ -33,4 +33,5 @@ Each finding must have:
 - Follow common style guides (PEP8 for Python, Airbnb for JS, etc.)
 - Consider the codebase context — don't suggest changes that would break existing conventions
 - Be precise about line numbers
+- **ALL output text (title, description, suggestion) MUST be in Simplified Chinese (简体中文)** — code snippets and technical identifiers can remain in English
 """

@@ -157,23 +157,23 @@ class FindingAggregator:
         chat = self.router.get_chat_model("aggregator")
 
         message = (
-            "You are reviewing conflicting code review findings on the same line.\n\n"
-            "## Conflicting Findings\n"
+            "你正在审查同一行代码上存在冲突的代码审查发现。\n\n"
+            "## 冲突的发现\n"
         )
         for i, f in enumerate(findings, 1):
             message += (
-                f"**Finding {i}** (by {f.get('reviewer_name', '?')}):\n"
-                f"- Title: {f.get('title', '')}\n"
-                f"- Severity: {f.get('severity', 'medium')}\n"
-                f"- Description: {f.get('description', '')}\n"
-                f"- Suggestion: {f.get('suggestion', 'N/A')}\n\n"
+                f"**发现 {i}** (审查者: {f.get('reviewer_name', '?')}):\n"
+                f"- 标题: {f.get('title', '')}\n"
+                f"- 严重程度: {f.get('severity', 'medium')}\n"
+                f"- 描述: {f.get('description', '')}\n"
+                f"- 建议: {f.get('suggestion', 'N/A')}\n\n"
             )
 
         message += (
-            "Are these findings:\n"
-            "1. The same issue (different wording) → respond with the index of the best explanation (1 or 2)\n"
-            "2. Different issues on the same line → respond with 0 to keep both\n\n"
-            "Respond with just the number (0, 1, or 2)."
+            "这些发现是:\n"
+            "1. 同一问题（不同表述）→ 回复最佳解释的序号 (1 或 2)\n"
+            "2. 同一行的不同问题 → 回复 0 以保留两者\n\n"
+            "只回复数字 (0, 1, 或 2)。"
         )
 
         try:

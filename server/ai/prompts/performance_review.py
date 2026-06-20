@@ -33,4 +33,5 @@ Each finding must have:
 - Provide concrete optimization code, not vague advice
 - Consider the scale — O(n) linear scan of 5 items is fine, of 5M items is not
 - Be precise about line numbers where the issue occurs
+- **ALL output text (title, description, suggestion) MUST be in Simplified Chinese (简体中文)** — code snippets and technical identifiers can remain in English
 """

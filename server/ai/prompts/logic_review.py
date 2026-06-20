@@ -33,4 +33,5 @@ Each finding must have:
 - Consider concurrent execution if the code runs in a multi-threaded/multi-request context
 - Be precise about line numbers where the issue occurs
 - If a test case would catch this, suggest the test
+- **ALL output text (title, description, suggestion) MUST be in Simplified Chinese (简体中文)** — code snippets and technical identifiers can remain in English
 """

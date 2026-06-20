@@ -115,6 +115,7 @@ class LangFuseTracer(BaseCallbackHandler):
         session_id = ctx.get("session_id", "")
         phase = ctx.get("phase", "unknown")
         reviewer = ctx.get("reviewer_name", "")
+        chunk_file = ctx.get("chunk_file", "")
 
         # Build a readable name
         name_parts = [phase]
@@ -122,23 +123,45 @@ class LangFuseTracer(BaseCallbackHandler):
             name_parts.append(reviewer)
         name = "-".join(name_parts)
 
+        metadata = {
+            "session_id": session_id,
+            "reviewer_name": reviewer,
+            "chunk_file": chunk_file,
+            "phase": phase,
+        }
+        tags = [t for t in [phase, reviewer] if t]
+
         try:
-            gen = cl.generation(
-                trace_id=session_id if session_id else None,
-                name=name,
-                model=model_name,
-                input=input_data,
-                metadata={
-                    "session_id": session_id,
-                    "reviewer_name": reviewer,
-                    "chunk_file": ctx.get("chunk_file", ""),
-                    "phase": phase,
-                },
-                tags=[t for t in [phase, reviewer] if t],
-            )
+            if session_id:
+                # Create a proper trace first, then add generation as child
+                trace = cl.trace(
+                    id=session_id,
+                    name=session_id,
+                    metadata=metadata,
+                    tags=tags,
+                )
+                gen = trace.generation(
+                    name=name,
+                    model=model_name,
+                    input=input_data,
+                    metadata=metadata,
+                )
+            else:
+                # No session — let generation auto-create its own trace
+                gen = cl.generation(
+                    name=name,
+                    model=model_name,
+                    input=input_data,
+                    metadata=metadata,
+                    tags=tags,
+                )
             self._pending[run_id] = gen
+            logger.info(
+                "LangFuse generation created: name=%s model=%s run_id=%s",
+                name, model_name, run_id,
+            )
         except Exception as e:
-            logger.debug("LangFuse create_generation failed: %s", e)
+            logger.warning("LangFuse create_generation failed: %s", e)
 
     def _end_generation(self, run_id: UUID, output: str, tok: dict | None = None, error: str | None = None):
         """Update and end a pending generation, then flush to langfuse."""
@@ -163,8 +186,12 @@ class LangFuseTracer(BaseCallbackHandler):
             cl = self.client
             if cl:
                 cl.flush()
+            logger.info(
+                "LangFuse generation ended: run_id=%s output_len=%d",
+                run_id, len(output) if output else 0,
+            )
         except Exception as e:
-            logger.debug("LangFuse end_generation failed: %s", e)
+            logger.warning("LangFuse end_generation failed: %s", e)
 
     # ---- Chat model callbacks (langchain 1.x uses these for ChatOpenAI) ----
 
