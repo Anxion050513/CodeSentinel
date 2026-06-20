@@ -331,5 +331,3 @@ aggregator.merge(findings)         ← 去重 + 排序 + 冲突仲裁
 
 完整 MVP 设计方案见：[CODE_REVIEW_BOT.md](CODE_REVIEW_BOT.md)  
 测试方案见：[TEST_PLAN.md](TEST_PLAN.md)
-
-   
