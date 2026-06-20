@@ -136,6 +136,7 @@ Invoke-RestMethod "$API/repos/$($repo.id)" -Method DELETE
 
 ### 场景 1：从零开始注册仓库并触发审查
 
+
 ```powershell
 # 前提：MySQL 运行中 + 有真实 GitHub Token
 
@@ -167,7 +168,7 @@ Write-Output "Status: $($review.status)"
 Start-Sleep -Seconds 30
 $status = Invoke-RestMethod "http://127.0.0.1:8000/api/v1/review/$($review.session_id)/status"
 Write-Output "Status: $($status.status) | Findings: $($status.total_findings)"
-
+   
 # Step 4: 获取完整报告
 $report = Invoke-RestMethod "http://127.0.0.1:8000/api/v1/review/$($review.session_id)/report"
 Write-Output "Severity: $($report.severity_counts | ConvertTo-Json)"
