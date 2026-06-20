@@ -118,6 +118,10 @@ class ReviewService:
         )
 
         try:
+            # Set LangFuse trace context for the entire review pipeline
+            from server.observability.callbacks import TraceContext
+            TraceContext.set(session_id=session.id, phase="review")
+
             from server.services.github_service import GitHubService
             github = GitHubService(repository.github_token_encrypted)
 
@@ -421,6 +425,13 @@ class ReviewService:
         max_per = review_rules.get("max_findings_per_reviewer", 20)
 
         async def review_chunk(chunk, reviewer):
+            from server.observability.callbacks import TraceContext
+            TraceContext.set(
+                session_id=session_id,
+                reviewer_name=reviewer.name,
+                chunk_file=chunk.get("file_path", ""),
+                phase="review",
+            )
             try:
                 return await reviewer.review(chunk)
             except Exception as e:

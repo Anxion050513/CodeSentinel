@@ -45,6 +45,19 @@ class BaseReviewer(ABC):
         system_prompt = self.get_system_prompt()
         user_prompt = self._build_user_prompt(chunk)
 
+        # Ensure TraceContext has at least reviewer_name + chunk_file set
+        # (caller should set session_id, but we set what we can here)
+        try:
+            from server.observability.callbacks import TraceContext
+            ctx = TraceContext.get()
+            if not ctx.get("reviewer_name"):
+                TraceContext.set(
+                    reviewer_name=self.name,
+                    chunk_file=chunk.get("file_path", ""),
+                )
+        except Exception:
+            pass
+
         chat = self.router.get_chat_model(self.name)
 
         try:

@@ -159,7 +159,14 @@ class CodeReviewEvalRunner:
                     ))
                     continue
 
-                # Run the reviewer
+                # Run the reviewer with LangFuse trace context
+                from server.observability.callbacks import TraceContext
+                TraceContext.set(
+                    session_id=f"eval-{test_id}",
+                    reviewer_name=reviewer_name,
+                    chunk_file=file_path,
+                    phase="eval",
+                )
                 actual_findings = await reviewer.review(chunk)
 
                 # Compute matches

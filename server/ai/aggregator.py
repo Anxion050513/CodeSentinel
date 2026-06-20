@@ -151,6 +151,9 @@ class FindingAggregator:
         if not self.router:
             return None
 
+        from server.observability.callbacks import TraceContext
+        TraceContext.set(phase="arbitrate")
+
         chat = self.router.get_chat_model("aggregator")
 
         message = (
