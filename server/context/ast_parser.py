@@ -133,6 +133,100 @@ class ASTParser:
                 count += self._count_complexity(node)
         return count
 
+    def find_functions_for_lines(
+        self, source_code: str, line_numbers: list[int], language: str = "python"
+    ) -> str:
+        """Extract the full text of functions that contain the given lines.
+
+        Returns a concatenated string of complete function bodies, or empty string
+        if no functions found. Used to give reviewers full function context for
+        the lines changed in a diff.
+        """
+        self._init_treesitter()
+
+        if self._parser and language == "python":
+            return self._find_functions_treesitter(source_code, line_numbers)
+        else:
+            return self._find_functions_regex(source_code, line_numbers, language)
+
+    def _find_functions_treesitter(
+        self, source_code: str, line_numbers: list[int]
+    ) -> str:
+        """Use tree-sitter to locate and extract full function bodies."""
+        try:
+            tree = self._parser.parse(bytes(source_code, "utf-8"))
+            root = tree.root_node
+            line_set = set(line_numbers)
+
+            bodies = []
+            self._collect_function_bodies(root, source_code, line_set, bodies)
+            return "\n\n".join(bodies)
+        except Exception as e:
+            logger.debug("tree-sitter function extraction failed: %s", e)
+            return ""
+
+    def _collect_function_bodies(
+        self, node, source: str, target_lines: set[int], bodies: list[str]
+    ):
+        """Walk AST, collecting full text of functions that intersect target_lines."""
+        if node.type in ("function_definition", "method_definition"):
+            start_line = node.start_point[0] + 1
+            end_line = node.end_point[0] + 1
+            func_lines = set(range(start_line, end_line + 1))
+            if func_lines & target_lines:
+                name_node = node.child_by_field_name("name")
+                name = source[name_node.start_byte:name_node.end_byte] if name_node else "?"
+                body = source[node.start_byte:node.end_byte]
+                bodies.append(f"# --- function: {name} (lines {start_line}-{end_line}) ---\n{body}")
+                return  # Don't recurse into matched function
+        for child in node.children:
+            self._collect_function_bodies(child, source, target_lines, bodies)
+
+    def _find_functions_regex(
+        self, source_code: str, line_numbers: list[int], language: str
+    ) -> str:
+        """Regex-based function extraction for non-Python languages."""
+        lines = source_code.split("\n")
+        target = set(line_numbers)
+        bodies = []
+
+        # Detect language-specific function patterns
+        func_start_pat = {
+            "php": r'^\s*(?:public\s+|private\s+|protected\s+)?function\s+(\w+)',
+            "javascript": r'^\s*(?:async\s+)?function\s+(\w+)',
+            "typescript": r'^\s*(?:async\s+)?function\s+(\w+)',
+            "go": r'^\s*func\s+(?:\(\w+\s+\*?\w+\)\s+)?(\w+)',
+            "java": r'^\s*(?:public\s+|private\s+|protected\s+)?\w+\s+(\w+)\s*\([^)]*\)\s*\{',
+        }.get(language, r'^\s*(?:def\s+|function\s+)(\w+)')
+
+        # Find function boundaries
+        i = 0
+        while i < len(lines):
+            m = re.match(func_start_pat, lines[i])
+            if m:
+                name = m.group(1)
+                j = i
+                # Find matching closing brace (simple brace counting)
+                depth = 0
+                started = False
+                while j < len(lines):
+                    depth += lines[j].count("{") - lines[j].count("}")
+                    if "{" in lines[j]:
+                        started = True
+                    if started and depth == 0:
+                        break
+                    j += 1
+                end = min(j + 1, len(lines))
+                func_lines = set(range(i + 1, end + 1))
+                if func_lines & target:
+                    body = "\n".join(lines[i:end])
+                    bodies.append(f"# --- function: {name} (lines {i+1}-{end}) ---\n{body}")
+                i = end
+            else:
+                i += 1
+
+        return "\n\n".join(bodies)
+
     def _extract_with_regex(self, source_code: str, language: str) -> dict:
         """Fallback regex-based extraction for any language."""
         functions = []
