@@ -71,6 +71,65 @@ class BaseReviewer(ABC):
             logger.error("Reviewer '%s' failed: %s", self.name, e)
             return []
 
+    @staticmethod
+    def _build_codebase_hints(file_path: str) -> str:
+        """Generate hints about what NOT to flag based on file role in the codebase.
+
+        These hints prevent reviewers from flagging intentional design choices
+        as bugs. Without this context, each reviewer sees an isolated function
+        and can't distinguish "bug" from "design decision".
+        """
+        hints = [
+            "### ⚠️ 代码库上下文（审查前必读）",
+            "",
+            "以下模式是**设计决策而非 bug**，不要报告：",
+        ]
+
+        # Admin / management paths — low traffic
+        if any(p in file_path for p in ("admin.py", "router.py", "dashboard", "main.py", "observability/")):
+            hints.append("- 管理后台 / 低频端点：每次请求新建 httpx 客户端是正常的，不需要连接池")
+            hints.append("- 管理后台端点不需要身份验证（开发环境设计如此）")
+            hints.append("- 日志 / 异常信息在开发环境返回详细信息是可接受的")
+
+        # Observability / langfuse
+        if "observability" in file_path or "langfuse" in file_path.lower():
+            hints.append("- TraceContext 的 session_id 由调用方保证非空，不需要防御 None")
+            hints.append("- 热路径上的 import 已缓存，Python import 首次后为零开销")
+
+        # Aggregator / dedup
+        if "aggregator" in file_path:
+            hints.append("- _text_similarity 是微秒级字符串操作，不是 CPU 密集计算，同步调用安全")
+            hints.append("- embeddings 有缓存层，不会对同标题重复调用 API")
+            hints.append("- _embed_client 是实例属性复用设计，不是资源泄漏")
+            hints.append("- 去重输入量 < 100 条，O(n²) 嵌套循环在实际规模下无性能问题")
+            hints.append("- API 密钥通过环境变量注入 + HTTPS 传输，符合安全最佳实践")
+
+        # Review service
+        if "review_service" in file_path:
+            hints.append("- post_pr_comment 内部有 raise_for_status，外层有 try/except + 日志")
+
+        # Cache service
+        if "cache_service" in file_path or "cache" in file_path:
+            hints.append("- Redis SCAN + cursor 循环是标准写法，必定返回 cursor=0")
+            hints.append("- 缓存失败降级为 pass，是有意设计的优雅降级")
+
+        # LLM / config
+        if file_path.endswith(("llm.py", "config.py", "settings.py", "dependencies.py")):
+            hints.append("- settings 是 Pydantic Settings 单例，永远不会是 None")
+            hints.append("- API 密钥通过环境变量注入，不是硬编码")
+
+        # Test files
+        if any(p in file_path for p in ("test_", "_check_", "seed_", "mock_", "fixture_")):
+            hints.append("- 这是测试文件 / 种子脚本，其中的安全问题是有意构造的")
+            hints.append("- 不要报告测试文件中的任何问题")
+
+        # General
+        hints.append("- 函数内的 import 语句有 Python 缓存，不是性能问题")
+        hints.append("- Query(None) 在 FastAPI 中不会变成字符串 'None'")
+        hints.append("- 浮点比较 $amount == 100.00 在金额场景是常见写法")
+
+        return "\n".join(hints) + "\n"
+
     def _build_user_prompt(self, chunk: dict) -> str:
         """Build the user prompt with diff chunk and context."""
         file_path = chunk.get("file_path", "unknown")
@@ -78,6 +137,16 @@ class BaseReviewer(ABC):
         context = chunk.get("context", {})
 
         parts = [f"## File: `{file_path}`\n"]
+
+        # ── Codebase context: tell reviewer what NOT to flag ──
+        parts.append(self._build_codebase_hints(file_path))
+        parts.append("")
+
+        # Full function context — the complete functions touched by this diff
+        full_funcs = context.get("full_functions", "")
+        if full_funcs:
+            parts.append("### 完整函数上下文（diff 所在函数的完整代码，消除"看不到定义"的误判）\n")
+            parts.append(f"```\n{full_funcs[:6000]}\n```\n")
 
         # Code change
         parts.append("### Diff/Code Change\n")

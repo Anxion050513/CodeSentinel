@@ -178,7 +178,7 @@ class ReviewService:
             # Step 3: Build context for each chunk
             from server.services.context_service import ContextService
             ctx_service = ContextService(repository, github)
-            enriched_chunks = await ctx_service.build_context_for_chunks(chunks)
+            enriched_chunks = await ctx_service.build_context_for_chunks(chunks, commit_sha)
 
             # Step 4: Parallel review
             review_rules = repository.review_rules or {}

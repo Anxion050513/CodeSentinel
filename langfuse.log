@@ -1032,3 +1032,727 @@ TypeError: TraceContext() takes no arguments
 2026-06-23 21:16:08,505 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef49f-7d7d-7200-8bd9-8dfd02a1d312
 2026-06-23 21:16:10,743 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef49f-7d7e-7263-ad03-115f8a42666c output_len=4145
 2026-06-23 21:16:10,958 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef49f-7d7e-7263-ad03-115f8a42666c
+2026-06-23 22:02:20,721 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 22:02:21,833 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,833 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,834 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,834 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,834 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,834 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,835 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,835 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,835 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,836 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,836 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,837 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,838 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,838 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,838 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,839 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,839 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,839 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,840 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,840 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,841 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,841 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,842 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,842 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,843 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,843 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,843 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,844 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,845 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,845 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,846 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,846 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,847 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,847 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,848 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,848 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,849 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,849 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,851 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,852 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,852 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,852 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,853 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,853 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,854 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,854 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,855 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,855 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,855 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,856 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,856 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,856 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,857 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,857 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,858 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,858 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,858 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,858 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,859 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=86bdef26
+2026-06-23 22:02:21,859 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=86bdef26
+2026-06-23 22:02:22,835 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0905-7421-9639-c67dd85f6adb output_len=2
+2026-06-23 22:02:22,854 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ee-7aa2-919b-ca66077056bf output_len=2
+2026-06-23 22:02:22,877 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0906-7c73-8f78-625642bc66bc output_len=14
+2026-06-23 22:02:22,917 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0905-7421-9639-c6685a135bfb output_len=14
+2026-06-23 22:02:22,970 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fc-76d0-ad52-6e220cd14f4e output_len=14
+2026-06-23 22:02:22,971 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f3-7a33-a911-684980c5c1a5 output_len=14
+2026-06-23 22:02:23,114 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f5-7791-8b06-a5a07c0b3d0f output_len=14
+2026-06-23 22:02:23,122 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ed-7e42-8ea7-888eb9a2a267 output_len=14
+2026-06-23 22:02:23,126 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fa-7e11-80bf-8885922ba80e output_len=14
+2026-06-23 22:02:23,187 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f0-7c03-838b-a2ab5b76aebf output_len=14
+2026-06-23 22:02:23,239 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f2-7f42-9fd6-1750b7f1ce92 output_len=14
+2026-06-23 22:02:23,302 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f2-7f42-9fd6-1749c511c9c4 output_len=14
+2026-06-23 22:02:23,409 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f4-7bf1-973b-b7234458bc96 output_len=14
+2026-06-23 22:02:23,728 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f5-7791-8b06-a59e87398eae output_len=2
+2026-06-23 22:02:24,906 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0905-7421-9639-c67dd85f6adb
+2026-06-23 22:02:24,906 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ee-7aa2-919b-ca66077056bf
+2026-06-23 22:02:24,906 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0906-7c73-8f78-625642bc66bc
+2026-06-23 22:02:24,907 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0905-7421-9639-c6685a135bfb
+2026-06-23 22:02:24,907 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fc-76d0-ad52-6e220cd14f4e
+2026-06-23 22:02:24,907 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f3-7a33-a911-684980c5c1a5
+2026-06-23 22:02:24,907 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f5-7791-8b06-a5a07c0b3d0f
+2026-06-23 22:02:24,908 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ed-7e42-8ea7-888eb9a2a267
+2026-06-23 22:02:24,908 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fa-7e11-80bf-8885922ba80e
+2026-06-23 22:02:24,909 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f0-7c03-838b-a2ab5b76aebf
+2026-06-23 22:02:24,909 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f2-7f42-9fd6-1750b7f1ce92
+2026-06-23 22:02:24,910 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f2-7f42-9fd6-1749c511c9c4
+2026-06-23 22:02:24,910 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f4-7bf1-973b-b7234458bc96
+2026-06-23 22:02:24,911 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f5-7791-8b06-a59e87398eae
+2026-06-23 22:02:25,020 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f8-7b13-9d62-167860fde643 output_len=686
+2026-06-23 22:02:25,068 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0902-7560-8ecb-641af17c8c70 output_len=467
+2026-06-23 22:02:25,313 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fd-7d20-9638-6ea6384afcfd output_len=797
+2026-06-23 22:02:25,535 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f1-7963-86ca-ca8c7d66cb97 output_len=428
+2026-06-23 22:02:25,583 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fa-7e11-80bf-8897342261c0 output_len=889
+2026-06-23 22:02:25,602 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0903-79d0-8a9b-daf3d01d4347 output_len=754
+2026-06-23 22:02:25,759 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fb-7100-92f4-67afe7ac0807 output_len=432
+2026-06-23 22:02:26,145 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f8-7b13-9d62-167860fde643
+2026-06-23 22:02:26,145 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0902-7560-8ecb-641af17c8c70
+2026-06-23 22:02:26,145 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fd-7d20-9638-6ea6384afcfd
+2026-06-23 22:02:26,145 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f1-7963-86ca-ca8c7d66cb97
+2026-06-23 22:02:26,145 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fa-7e11-80bf-8897342261c0
+2026-06-23 22:02:26,146 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0903-79d0-8a9b-daf3d01d4347
+2026-06-23 22:02:26,146 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fb-7100-92f4-67afe7ac0807
+2026-06-23 22:02:26,252 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ef-7253-9b5a-12aac85da040 output_len=460
+2026-06-23 22:02:26,472 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ef-7253-9b5a-12aac85da040
+2026-06-23 22:02:26,495 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ec-79b3-87b3-76325a4f0858 output_len=457
+2026-06-23 22:02:26,720 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ec-79b3-87b3-76325a4f0858
+2026-06-23 22:02:26,911 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f6-75f1-868b-2114615a8c58 output_len=845
+2026-06-23 22:02:27,145 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f6-75f1-868b-2114615a8c58
+2026-06-23 22:02:27,218 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f9-7f42-9f90-b66261058c97 output_len=1027
+2026-06-23 22:02:27,341 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fe-7f72-ad27-e8492c075cec output_len=926
+2026-06-23 22:02:27,605 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0908-7d43-9e97-16e9eedb65df output_len=785
+2026-06-23 22:02:27,762 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f7-7c23-a619-582bc6001a83 output_len=1475
+2026-06-23 22:02:28,361 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e2-75f1-94fd-4dfb0fc6717c output_len=1045
+2026-06-23 22:02:28,536 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fd-7d20-9638-6eb118abb609 output_len=1299
+2026-06-23 22:02:28,717 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08fb-7100-92f4-679084d37c93 output_len=1345
+2026-06-23 22:02:28,729 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0900-7b33-8b30-fc7d914006e5 output_len=1554
+2026-06-23 22:02:28,819 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ff-74a0-ae03-d93f76be1bbe output_len=1310
+2026-06-23 22:02:29,066 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08eb-7110-94bf-a16966eab192 output_len=1595
+2026-06-23 22:02:29,067 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e5-7280-905b-9d3f2a725471 output_len=1677
+2026-06-23 22:02:29,233 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ea-7783-a089-a4dc5879393b output_len=1451
+2026-06-23 22:02:29,248 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0901-7c32-8af6-d7f807c9432f output_len=1630
+2026-06-23 22:02:29,427 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0903-79d0-8a9b-db0144a41b0f output_len=1300
+2026-06-23 22:02:29,442 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f3-7a33-a911-685119eba1e2 output_len=1266
+2026-06-23 22:02:29,509 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f6-75f1-868b-210c81e03c16 output_len=1348
+2026-06-23 22:02:29,745 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-0904-7632-9e04-3f12fd7a0909 output_len=1562
+2026-06-23 22:02:30,139 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e7-7403-ac59-d67226a605aa output_len=1664
+2026-06-23 22:02:30,773 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e9-7f81-ae87-efbb203a82b0 output_len=1752
+2026-06-23 22:02:30,773 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e4-7a10-a62d-4035de8273c7 output_len=1801
+2026-06-23 22:02:31,500 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e7-7403-ac59-d68aa0d5d836 output_len=1893
+2026-06-23 22:02:31,691 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f1-7963-86ca-ca9a6616f443 output_len=1771
+2026-06-23 22:02:31,694 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e1-7950-8ad9-748760de0eef output_len=1956
+2026-06-23 22:02:32,040 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f9-7f42-9f90-b66261058c97
+2026-06-23 22:02:32,041 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fe-7f72-ad27-e8492c075cec
+2026-06-23 22:02:32,041 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0908-7d43-9e97-16e9eedb65df
+2026-06-23 22:02:32,041 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f7-7c23-a619-582bc6001a83
+2026-06-23 22:02:32,041 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e2-75f1-94fd-4dfb0fc6717c
+2026-06-23 22:02:32,041 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fd-7d20-9638-6eb118abb609
+2026-06-23 22:02:32,041 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08fb-7100-92f4-679084d37c93
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0900-7b33-8b30-fc7d914006e5
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ff-74a0-ae03-d93f76be1bbe
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08eb-7110-94bf-a16966eab192
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e5-7280-905b-9d3f2a725471
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e9-7f81-ae87-efbb203a82b0
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0901-7c32-8af6-d7f807c9432f
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0903-79d0-8a9b-db0144a41b0f
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f3-7a33-a911-685119eba1e2
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f6-75f1-868b-210c81e03c16
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-0904-7632-9e04-3f12fd7a0909
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e7-7403-ac59-d67226a605aa
+2026-06-23 22:02:32,042 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ea-7783-a089-a4dc5879393b
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e4-7a10-a62d-4035de8273c7
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e7-7403-ac59-d68aa0d5d836
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f1-7963-86ca-ca9a6616f443
+2026-06-23 22:02:32,043 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e1-7950-8ad9-748760de0eef
+2026-06-23 22:02:32,315 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08df-7dc2-b7ba-9f90b3c70833 output_len=2260
+2026-06-23 22:02:32,355 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ec-79b3-87b3-7628c1326454 output_len=2007
+2026-06-23 22:02:32,454 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e8-7011-815c-fbd752193d9c output_len=1888
+2026-06-23 22:02:32,629 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e5-7280-905b-9d25a0c5b35b output_len=2014
+2026-06-23 22:02:32,967 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08f8-7b13-9d62-168e11abcb70 output_len=2113
+2026-06-23 22:02:33,199 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e8-7011-815c-fbc4c72e6465 output_len=2975
+2026-06-23 22:02:33,491 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e1-7950-8ad9-747321f6b396 output_len=2440
+2026-06-23 22:02:33,897 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08df-7dc2-b7ba-9f90b3c70833
+2026-06-23 22:02:33,897 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ec-79b3-87b3-7628c1326454
+2026-06-23 22:02:33,897 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e8-7011-815c-fbd752193d9c
+2026-06-23 22:02:33,898 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08f8-7b13-9d62-168e11abcb70
+2026-06-23 22:02:33,897 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e5-7280-905b-9d25a0c5b35b
+2026-06-23 22:02:33,898 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e8-7011-815c-fbc4c72e6465
+2026-06-23 22:02:33,898 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e1-7950-8ad9-747321f6b396
+2026-06-23 22:02:34,303 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ea-7783-a089-a4efd18a2da8 output_len=3369
+2026-06-23 22:02:34,507 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e0-74a3-89ed-37b36b09903c output_len=2240
+2026-06-23 22:02:34,748 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ea-7783-a089-a4efd18a2da8
+2026-06-23 22:02:34,748 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e0-74a3-89ed-37b36b09903c
+2026-06-23 22:02:35,315 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e3-7951-b053-067b283ee7ab output_len=3308
+2026-06-23 22:02:35,567 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08ef-7253-9b5a-1295cf5d2e86 output_len=2144
+2026-06-23 22:02:35,599 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e3-7951-b053-066ebd648928 output_len=3508
+2026-06-23 22:02:37,005 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e3-7951-b053-067b283ee7ab
+2026-06-23 22:02:37,006 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08ef-7253-9b5a-1295cf5d2e86
+2026-06-23 22:02:37,006 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e3-7951-b053-066ebd648928
+2026-06-23 22:02:37,873 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4ca-08e6-71a0-bfbb-5fd513eb4486 output_len=3965
+2026-06-23 22:02:38,327 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4ca-08e6-71a0-bfbb-5fd513eb4486
+2026-06-23 22:08:41,197 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 22:08:41,925 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,925 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,926 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,927 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,927 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,927 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,927 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,928 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,928 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,929 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,929 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,929 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,930 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,930 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,930 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,930 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,931 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,931 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,931 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,932 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,932 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,932 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,932 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,933 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,933 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,933 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,933 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,934 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,934 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,935 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,935 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,936 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,936 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,936 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,937 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,938 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,938 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,938 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,938 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,939 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,939 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,939 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,939 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,940 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,940 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,940 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,941 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,941 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,941 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,941 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,942 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,942 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,942 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,943 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,943 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,944 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,944 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,944 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,945 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=224f57cf
+2026-06-23 22:08:41,945 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=224f57cf
+2026-06-23 22:08:43,078 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b0-75f2-9ed8-7c24a865fa3e output_len=14
+2026-06-23 22:08:43,096 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b4-7843-8b6c-8052307c09ba output_len=2
+2026-06-23 22:08:43,112 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5ae-7bc1-8ca7-ea1cf661e667 output_len=2
+2026-06-23 22:08:43,160 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b1-7493-940c-82f7ea1d66fb output_len=14
+2026-06-23 22:08:43,200 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b6-7e82-9435-99957339af4f output_len=2
+2026-06-23 22:08:43,205 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5ab-72d1-bc24-722d8ea946ca output_len=2
+2026-06-23 22:08:43,215 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b3-7540-94f3-f200117dd8af output_len=14
+2026-06-23 22:08:43,239 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5ac-7d32-814f-b89e449611b6 output_len=2
+2026-06-23 22:08:43,244 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b2-7e72-a22e-ee5bd358ad45 output_len=14
+2026-06-23 22:08:43,307 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b4-7843-8b6c-80600b7c315a output_len=14
+2026-06-23 22:08:43,322 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c3-7071-bc55-d511c42b836e output_len=2
+2026-06-23 22:08:43,339 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bb-7a71-b96d-1119bc215b4a output_len=14
+2026-06-23 22:08:43,359 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c3-7071-bc55-d5240f461369 output_len=14
+2026-06-23 22:08:44,521 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b0-75f2-9ed8-7c24a865fa3e
+2026-06-23 22:08:44,521 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b4-7843-8b6c-8052307c09ba
+2026-06-23 22:08:44,522 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5ae-7bc1-8ca7-ea1cf661e667
+2026-06-23 22:08:44,522 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b1-7493-940c-82f7ea1d66fb
+2026-06-23 22:08:44,522 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b6-7e82-9435-99957339af4f
+2026-06-23 22:08:44,522 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5ab-72d1-bc24-722d8ea946ca
+2026-06-23 22:08:44,523 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b3-7540-94f3-f200117dd8af
+2026-06-23 22:08:44,523 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5ac-7d32-814f-b89e449611b6
+2026-06-23 22:08:44,523 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b2-7e72-a22e-ee5bd358ad45
+2026-06-23 22:08:44,524 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b4-7843-8b6c-80600b7c315a
+2026-06-23 22:08:44,524 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c3-7071-bc55-d511c42b836e
+2026-06-23 22:08:44,525 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bb-7a71-b96d-1119bc215b4a
+2026-06-23 22:08:44,525 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c3-7071-bc55-d5240f461369
+2026-06-23 22:08:45,126 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bb-7a71-b96d-11264a0f76d8 output_len=668
+2026-06-23 22:08:45,238 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b7-7671-8e36-0950fe7ecf7e output_len=681
+2026-06-23 22:08:45,421 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bf-7652-9cf6-576f2a4c0907 output_len=530
+2026-06-23 22:08:45,433 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5af-7092-9719-5f3bf6128774 output_len=425
+2026-06-23 22:08:45,472 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b9-73f2-9eda-1d805bef8afa output_len=780
+2026-06-23 22:08:45,862 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bb-7a71-b96d-11264a0f76d8
+2026-06-23 22:08:45,862 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b7-7671-8e36-0950fe7ecf7e
+2026-06-23 22:08:45,862 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bf-7652-9cf6-576f2a4c0907
+2026-06-23 22:08:45,863 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5af-7092-9719-5f3bf6128774
+2026-06-23 22:08:45,863 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b9-73f2-9eda-1d805bef8afa
+2026-06-23 22:08:45,879 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5ba-7581-bcae-9c4fe11d48a4 output_len=753
+2026-06-23 22:08:46,095 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b8-7883-b502-6c3790be96b5 output_len=834
+2026-06-23 22:08:46,341 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5ba-7581-bcae-9c4fe11d48a4
+2026-06-23 22:08:46,341 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b8-7883-b502-6c3790be96b5
+2026-06-23 22:08:46,659 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c0-7ed2-a18f-cfad0a1ca9d2 output_len=1028
+2026-06-23 22:08:46,728 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5aa-7591-a2c3-ca7c51808d15 output_len=543
+2026-06-23 22:08:46,979 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c2-72c2-8c73-a1d45555868e output_len=835
+2026-06-23 22:08:47,041 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a9-7a82-b3f1-f36df8b78450 output_len=1021
+2026-06-23 22:08:47,301 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5be-79f2-b1f9-776ba2a318ac output_len=870
+2026-06-23 22:08:47,501 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b6-7e82-9435-998f0f517bb5 output_len=849
+2026-06-23 22:08:47,662 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bc-7442-b5d0-bb6eea393c4d output_len=958
+2026-06-23 22:08:47,674 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c4-7760-9c9c-2d337b0af84a output_len=1194
+2026-06-23 22:08:47,694 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b8-7883-b502-6c2b43ff760b output_len=1024
+2026-06-23 22:08:48,136 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c0-7ed2-a18f-cfb6d291b4da output_len=1089
+2026-06-23 22:08:48,157 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a7-7b91-9ae0-2c61dadd1d71 output_len=1123
+2026-06-23 22:08:48,847 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b0-75f2-9ed8-7c19b83d5a9e output_len=1119
+2026-06-23 22:08:48,957 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b5-7100-a9e4-a26730443942 output_len=1010
+2026-06-23 22:08:49,069 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5ad-78a3-a419-d70e137d1064 output_len=899
+2026-06-23 22:08:49,332 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5c1-72a2-80c9-c5fc8cdf0b2e output_len=1494
+2026-06-23 22:08:49,376 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bc-7442-b5d0-bb5983936fb3 output_len=1473
+2026-06-23 22:08:49,810 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a6-7a93-9790-1ac4ca79bc43 output_len=1583
+2026-06-23 22:08:50,137 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c0-7ed2-a18f-cfad0a1ca9d2
+2026-06-23 22:08:50,137 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5aa-7591-a2c3-ca7c51808d15
+2026-06-23 22:08:50,137 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c2-72c2-8c73-a1d45555868e
+2026-06-23 22:08:50,137 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a9-7a82-b3f1-f36df8b78450
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5be-79f2-b1f9-776ba2a318ac
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bc-7442-b5d0-bb6eea393c4d
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b6-7e82-9435-998f0f517bb5
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c4-7760-9c9c-2d337b0af84a
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b8-7883-b502-6c2b43ff760b
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c0-7ed2-a18f-cfb6d291b4da
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a7-7b91-9ae0-2c61dadd1d71
+2026-06-23 22:08:50,138 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b0-75f2-9ed8-7c19b83d5a9e
+2026-06-23 22:08:50,139 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b5-7100-a9e4-a26730443942
+2026-06-23 22:08:50,139 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5ad-78a3-a419-d70e137d1064
+2026-06-23 22:08:50,139 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5c1-72a2-80c9-c5fc8cdf0b2e
+2026-06-23 22:08:50,139 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bc-7442-b5d0-bb5983936fb3
+2026-06-23 22:08:50,139 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a6-7a93-9790-1ac4ca79bc43
+2026-06-23 22:08:50,407 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a6-7a93-9790-1addf3d16efb output_len=1659
+2026-06-23 22:08:50,453 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bf-7652-9cf6-575d5d21560a output_len=1643
+2026-06-23 22:08:50,813 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a3-7120-98d7-bcb165c4e61c output_len=1719
+2026-06-23 22:08:51,115 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a6-7a93-9790-1addf3d16efb
+2026-06-23 22:08:51,115 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bf-7652-9cf6-575d5d21560a
+2026-06-23 22:08:51,115 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a3-7120-98d7-bcb165c4e61c
+2026-06-23 22:08:51,324 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a3-7120-98d7-bca70a96772f output_len=1865
+2026-06-23 22:08:51,553 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d59d-71e1-9013-61f306de9eee output_len=1788
+2026-06-23 22:08:51,562 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5ad-78a3-a419-d6ff7df5fadc output_len=1854
+2026-06-23 22:08:51,753 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b2-7e72-a22e-ee6eaf10bfae output_len=1730
+2026-06-23 22:08:51,792 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a1-7fb0-9ccd-e91be1c3e5c3 output_len=1864
+2026-06-23 22:08:52,096 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d59d-71e1-9013-61ed5119d00b output_len=2444
+2026-06-23 22:08:52,125 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a2-7351-b850-67334c77b228 output_len=2277
+2026-06-23 22:08:52,370 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5aa-7591-a2c3-ca6702bb3b1a output_len=2037
+2026-06-23 22:08:52,482 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b9-73f2-9eda-1d9be9c11086 output_len=2126
+2026-06-23 22:08:52,495 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5b7-7671-8e36-096d51f383e1 output_len=2088
+2026-06-23 22:08:52,563 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5bd-7bd3-bc02-e5a939d2c0d9 output_len=2260
+2026-06-23 22:08:52,633 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a4-7e52-823e-03b944283c9b output_len=2399
+2026-06-23 22:08:52,952 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a3-7120-98d7-bca70a96772f
+2026-06-23 22:08:52,952 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d59d-71e1-9013-61f306de9eee
+2026-06-23 22:08:52,952 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5ad-78a3-a419-d6ff7df5fadc
+2026-06-23 22:08:52,952 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b2-7e72-a22e-ee6eaf10bfae
+2026-06-23 22:08:52,953 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a4-7e52-823e-03b944283c9b
+2026-06-23 22:08:52,952 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d59d-71e1-9013-61ed5119d00b
+2026-06-23 22:08:52,953 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a2-7351-b850-67334c77b228
+2026-06-23 22:08:52,953 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5aa-7591-a2c3-ca6702bb3b1a
+2026-06-23 22:08:52,953 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b9-73f2-9eda-1d9be9c11086
+2026-06-23 22:08:52,953 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5b7-7671-8e36-096d51f383e1
+2026-06-23 22:08:52,953 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5bd-7bd3-bc02-e5a939d2c0d9
+2026-06-23 22:08:52,952 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a1-7fb0-9ccd-e91be1c3e5c3
+2026-06-23 22:08:53,009 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a5-7ab2-89f1-83f1e2cbcc44 output_len=2676
+2026-06-23 22:08:53,242 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a5-7ab2-89f1-83f1e2cbcc44
+2026-06-23 22:08:53,722 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d59a-79f1-b5ff-73b799e586ec output_len=3043
+2026-06-23 22:08:53,736 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a0-74e1-a2a0-157467214070 output_len=2535
+2026-06-23 22:08:54,194 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d59a-79f1-b5ff-73b799e586ec
+2026-06-23 22:08:54,194 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a0-74e1-a2a0-157467214070
+2026-06-23 22:08:54,360 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a8-74a1-b24f-ab2130f1cfd8 output_len=2561
+2026-06-23 22:08:54,363 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d59e-7232-8fa8-bf13fb3dadfd output_len=2209
+2026-06-23 22:08:54,842 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a8-74a1-b24f-ab2130f1cfd8
+2026-06-23 22:08:54,842 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d59e-7232-8fa8-bf13fb3dadfd
+2026-06-23 22:08:55,234 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d5a1-7fb0-9ccd-e929c2180733 output_len=2915
+2026-06-23 22:08:55,522 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d5a1-7fb0-9ccd-e929c2180733
+2026-06-23 22:08:59,074 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d59c-7a33-b6af-cfaafa0a3627 output_len=4500
+2026-06-23 22:08:59,278 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4cf-d59f-7b93-b1b2-a37263af1267 output_len=4699
+2026-06-23 22:09:00,191 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d59c-7a33-b6af-cfaafa0a3627
+2026-06-23 22:09:00,191 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4cf-d59f-7b93-b1b2-a37263af1267
+2026-06-23 22:11:09,548 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 22:11:10,272 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,273 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,273 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,274 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,274 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,274 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,274 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,275 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,275 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,275 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,276 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,276 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,276 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,277 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,277 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,277 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,277 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,278 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,278 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,278 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,279 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,279 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,279 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,279 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,280 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,280 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,280 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,280 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,281 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,281 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,281 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,281 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,282 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,282 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,282 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,283 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,283 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,283 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,284 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,284 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,284 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,284 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,285 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,285 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,285 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,286 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,286 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,286 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,286 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,287 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,288 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,288 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,288 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,289 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,290 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,290 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,290 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,290 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,291 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=c175ca10
+2026-06-23 22:11:10,302 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=c175ca10
+2026-06-23 22:11:11,311 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192b-7eb2-a842-3b67f56892de output_len=14
+2026-06-23 22:11:11,331 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192d-71b3-a71d-d0d828ee4f9a output_len=2
+2026-06-23 22:11:11,386 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1928-7871-ac49-dae818736714 output_len=14
+2026-06-23 22:11:11,426 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192a-7043-b429-7747dead9f60 output_len=14
+2026-06-23 22:11:11,546 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193d-7732-8565-724110f01c01 output_len=14
+2026-06-23 22:11:11,554 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1932-7f81-b668-a5bbca63b843 output_len=14
+2026-06-23 22:11:11,624 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192c-7cf2-a33e-25dfca15bb1e output_len=14
+2026-06-23 22:11:11,634 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192a-7043-b429-77318ff2ccdc output_len=14
+2026-06-23 22:11:11,652 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192f-7782-84cc-f32860f4dff9 output_len=2
+2026-06-23 22:11:11,669 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1935-7140-8df0-947ca55923c7 output_len=14
+2026-06-23 22:11:11,694 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193d-7732-8565-7255d6b0541a output_len=2
+2026-06-23 22:11:11,698 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193e-7b81-bfc0-94a17b1a3b75 output_len=14
+2026-06-23 22:11:11,700 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1926-7822-8bcf-7f5f0bec3993 output_len=2
+2026-06-23 22:11:12,539 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192b-7eb2-a842-3b67f56892de
+2026-06-23 22:11:12,539 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192d-71b3-a71d-d0d828ee4f9a
+2026-06-23 22:11:12,539 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1928-7871-ac49-dae818736714
+2026-06-23 22:11:12,540 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192a-7043-b429-7747dead9f60
+2026-06-23 22:11:12,540 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193d-7732-8565-724110f01c01
+2026-06-23 22:11:12,540 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1932-7f81-b668-a5bbca63b843
+2026-06-23 22:11:12,540 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192c-7cf2-a33e-25dfca15bb1e
+2026-06-23 22:11:12,540 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192a-7043-b429-77318ff2ccdc
+2026-06-23 22:11:12,541 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192f-7782-84cc-f32860f4dff9
+2026-06-23 22:11:12,541 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1935-7140-8df0-947ca55923c7
+2026-06-23 22:11:12,541 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193d-7732-8565-7255d6b0541a
+2026-06-23 22:11:12,541 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193e-7b81-bfc0-94a17b1a3b75
+2026-06-23 22:11:12,541 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1926-7822-8bcf-7f5f0bec3993
+2026-06-23 22:11:13,274 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1933-70c2-bf83-12c754accc4a output_len=601
+2026-06-23 22:11:13,328 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193b-7462-897d-c7ca4e4cd809 output_len=359
+2026-06-23 22:11:13,633 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1934-7c11-ac6c-a06e427d072c output_len=427
+2026-06-23 22:11:13,728 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1936-7fa0-a990-59007b740208 output_len=717
+2026-06-23 22:11:13,826 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1925-72e3-a173-eb48dea23742 output_len=385
+2026-06-23 22:11:13,847 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1930-7fc2-8f67-71f4e35e9c92 output_len=636
+2026-06-23 22:11:13,936 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193a-7d03-9f30-914257acff66 output_len=619
+2026-06-23 22:11:14,022 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192f-7782-84cc-f3150b97d682 output_len=411
+2026-06-23 22:11:14,023 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1929-7263-8d90-e0fb1234ed0e output_len=397
+2026-06-23 22:11:14,063 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1926-7822-8bcf-7f4c1bbb5400 output_len=507
+2026-06-23 22:11:14,282 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1937-7373-8208-f6914898abec output_len=492
+2026-06-23 22:11:14,435 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193c-7082-bb9b-71cd2f34faf3 output_len=705
+2026-06-23 22:11:15,054 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1928-7871-ac49-dadae4331cc8 output_len=556
+2026-06-23 22:11:15,333 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1933-70c2-bf83-12c754accc4a
+2026-06-23 22:11:15,333 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193b-7462-897d-c7ca4e4cd809
+2026-06-23 22:11:15,333 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1934-7c11-ac6c-a06e427d072c
+2026-06-23 22:11:15,333 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1936-7fa0-a990-59007b740208
+2026-06-23 22:11:15,333 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1925-72e3-a173-eb48dea23742
+2026-06-23 22:11:15,334 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1930-7fc2-8f67-71f4e35e9c92
+2026-06-23 22:11:15,334 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193a-7d03-9f30-914257acff66
+2026-06-23 22:11:15,334 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192f-7782-84cc-f3150b97d682
+2026-06-23 22:11:15,334 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1937-7373-8208-f6914898abec
+2026-06-23 22:11:15,334 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1926-7822-8bcf-7f4c1bbb5400
+2026-06-23 22:11:15,334 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1929-7263-8d90-e0fb1234ed0e
+2026-06-23 22:11:15,335 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193c-7082-bb9b-71cd2f34faf3
+2026-06-23 22:11:15,335 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1928-7871-ac49-dadae4331cc8
+2026-06-23 22:11:15,555 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192d-71b3-a71d-d0e5f6471ccd output_len=876
+2026-06-23 22:11:15,814 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192d-71b3-a71d-d0e5f6471ccd
+2026-06-23 22:11:15,956 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1938-7be2-a091-0a29e8f8e948 output_len=1045
+2026-06-23 22:11:15,988 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1931-7233-a433-27684706b766 output_len=1008
+2026-06-23 22:11:16,116 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193c-7082-bb9b-71be567a8bae output_len=1059
+2026-06-23 22:11:16,193 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1933-70c2-bf83-12ddd2cef267 output_len=1138
+2026-06-23 22:11:16,290 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1923-7dc1-86a4-078f6ca68e58 output_len=1136
+2026-06-23 22:11:16,675 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1938-7be2-a091-0a29e8f8e948
+2026-06-23 22:11:16,675 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1931-7233-a433-27684706b766
+2026-06-23 22:11:16,676 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193c-7082-bb9b-71be567a8bae
+2026-06-23 22:11:16,676 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1933-70c2-bf83-12ddd2cef267
+2026-06-23 22:11:16,676 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1923-7dc1-86a4-078f6ca68e58
+2026-06-23 22:11:16,679 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1936-7fa0-a990-5919889d28d9 output_len=1102
+2026-06-23 22:11:16,715 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1939-7f63-88f5-134a32c5033c output_len=1336
+2026-06-23 22:11:16,963 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1924-7d21-9878-41a58d332dfe output_len=1523
+2026-06-23 22:11:17,358 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1936-7fa0-a990-5919889d28d9
+2026-06-23 22:11:17,358 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1939-7f63-88f5-134a32c5033c
+2026-06-23 22:11:17,358 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1924-7d21-9878-41a58d332dfe
+2026-06-23 22:11:17,911 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191e-7463-8163-4e20a208f633 output_len=1653
+2026-06-23 22:11:18,167 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191e-7463-8163-4e20a208f633
+2026-06-23 22:11:18,439 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1921-7de2-af19-980bf8efa650 output_len=1503
+2026-06-23 22:11:18,667 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1921-7de2-af19-980bf8efa650
+2026-06-23 22:11:18,897 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1939-7f63-88f5-1359bb860516 output_len=1909
+2026-06-23 22:11:18,914 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-193f-7391-a506-852aed455c41 output_len=1814
+2026-06-23 22:11:19,255 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1914-7a40-a146-eb0ba5985350 output_len=1800
+2026-06-23 22:11:19,491 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191f-7c51-a518-4e5cdd78b9d0 output_len=1808
+2026-06-23 22:11:19,637 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1929-7263-8d90-e1044d35574a output_len=1779
+2026-06-23 22:11:19,839 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1922-70e1-9e72-1f6efbfa18d9 output_len=1829
+2026-06-23 22:11:20,225 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191e-7463-8163-4e3e006d7788 output_len=2113
+2026-06-23 22:11:20,237 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191d-7d71-9e54-65f168e59353 output_len=1880
+2026-06-23 22:11:20,459 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1939-7f63-88f5-1359bb860516
+2026-06-23 22:11:20,459 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-193f-7391-a506-852aed455c41
+2026-06-23 22:11:20,460 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1914-7a40-a146-eb0ba5985350
+2026-06-23 22:11:20,460 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191f-7c51-a518-4e5cdd78b9d0
+2026-06-23 22:11:20,460 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1929-7263-8d90-e1044d35574a
+2026-06-23 22:11:20,461 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1922-70e1-9e72-1f6efbfa18d9
+2026-06-23 22:11:20,461 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191e-7463-8163-4e3e006d7788
+2026-06-23 22:11:20,461 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191d-7d71-9e54-65f168e59353
+2026-06-23 22:11:20,769 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1921-7de2-af19-97f236ebd5c9 output_len=2663
+2026-06-23 22:11:20,946 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1923-7dc1-86a4-079a3f26bb2a output_len=2122
+2026-06-23 22:11:21,430 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192e-7941-9d6c-df5d5be44b50 output_len=1729
+2026-06-23 22:11:21,647 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1931-7233-a433-275ce74d0890 output_len=2020
+2026-06-23 22:11:21,721 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191d-7d71-9e54-660790e666b4 output_len=2527
+2026-06-23 22:11:21,813 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1917-7a51-baad-9e16246180f0 output_len=1927
+2026-06-23 22:11:21,916 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-192b-7eb2-a842-3b7f57f702df output_len=1953
+2026-06-23 22:11:21,929 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1924-7d21-9878-41b3f9bd630c output_len=2486
+2026-06-23 22:11:21,993 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1916-7e32-8b3a-b485aaa303ff output_len=2383
+2026-06-23 22:11:22,356 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1920-7bc1-807e-e6f8a625f63b output_len=2510
+2026-06-23 22:11:22,428 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1927-7972-938d-4224733c6d44 output_len=1989
+2026-06-23 22:11:22,807 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1921-7de2-af19-97f236ebd5c9
+2026-06-23 22:11:22,808 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1923-7dc1-86a4-079a3f26bb2a
+2026-06-23 22:11:22,808 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192e-7941-9d6c-df5d5be44b50
+2026-06-23 22:11:22,808 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1931-7233-a433-275ce74d0890
+2026-06-23 22:11:22,808 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191d-7d71-9e54-660790e666b4
+2026-06-23 22:11:22,809 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1917-7a51-baad-9e16246180f0
+2026-06-23 22:11:22,809 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-192b-7eb2-a842-3b7f57f702df
+2026-06-23 22:11:22,809 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1924-7d21-9878-41b3f9bd630c
+2026-06-23 22:11:22,810 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1916-7e32-8b3a-b485aaa303ff
+2026-06-23 22:11:22,810 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1920-7bc1-807e-e6f8a625f63b
+2026-06-23 22:11:22,810 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1927-7972-938d-4224733c6d44
+2026-06-23 22:11:25,216 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191b-7222-9565-19f77694af75 output_len=4036
+2026-06-23 22:11:25,446 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191b-7222-9565-19f77694af75
+2026-06-23 22:11:26,623 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1917-7a51-baad-9e2576c90259 output_len=4197
+2026-06-23 22:11:26,857 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1917-7a51-baad-9e2576c90259
+2026-06-23 22:11:29,372 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-1915-7823-abb3-2dae44a6a405 output_len=4383
+2026-06-23 22:11:29,597 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-1915-7823-abb3-2dae44a6a405
+2026-06-23 22:11:30,837 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d2-191c-7c20-9c9b-964feae1dccc output_len=5605
+2026-06-23 22:11:31,083 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d2-191c-7c20-9c9b-964feae1dccc
+2026-06-23 22:16:20,537 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 22:16:21,666 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,667 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,668 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,668 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,669 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,670 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,670 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,671 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,672 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,672 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,672 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,673 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,673 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,674 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,675 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,675 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,676 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,676 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,676 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,677 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,678 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,678 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,679 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,680 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,681 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,682 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,682 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,683 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,684 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,684 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,685 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,686 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,688 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,688 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,689 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,689 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,690 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,691 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,691 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,692 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,692 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,693 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,694 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,694 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,695 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,696 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,696 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,697 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,698 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,698 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,699 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,700 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,701 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,702 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,702 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,703 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,703 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,703 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,704 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=386aa299
+2026-06-23 22:16:21,704 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=386aa299
+2026-06-23 22:16:22,790 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d983-7082-b2ec-0d5d4ab68788 output_len=14
+2026-06-23 22:16:22,803 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d97a-7bf0-b3f0-42798ef73cde output_len=14
+2026-06-23 22:16:22,859 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d987-7b81-8e94-9658c4f039e0 output_len=14
+2026-06-23 22:16:22,917 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d990-7c02-84ff-8f467b5b95fc output_len=14
+2026-06-23 22:16:22,992 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d99c-7f33-a259-1068d337b8c6 output_len=2
+2026-06-23 22:16:23,001 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d979-7712-9365-7b0d3df6584f output_len=14
+2026-06-23 22:16:23,028 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d976-7c23-b543-9a373a11260c output_len=14
+2026-06-23 22:16:23,047 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d973-7943-bf78-661f08e7a8ff output_len=14
+2026-06-23 22:16:23,050 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d972-7930-a5be-2608b8c66a18 output_len=2
+2026-06-23 22:16:23,058 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d974-77f2-a29c-e640915bf636 output_len=2
+2026-06-23 22:16:23,068 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d980-7c71-9a63-60900f966c5a output_len=14
+2026-06-23 22:16:23,083 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d982-7402-be01-11c114bdffef output_len=2
+2026-06-23 22:16:23,097 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d971-7bf3-b861-7fd397d9734d output_len=14
+2026-06-23 22:16:23,110 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d993-72b3-9a9c-0e3283b8c6ae output_len=14
+2026-06-23 22:16:23,115 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d97c-7503-8762-1a1091b1754b output_len=14
+2026-06-23 22:16:23,203 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d99c-7f33-a259-105c6f28858d output_len=14
+2026-06-23 22:16:23,318 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d989-7c82-a476-06a8302959f8 output_len=14
+2026-06-23 22:16:23,335 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d99d-7ff1-875b-d9a3122f832f output_len=14
+2026-06-23 22:16:23,608 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d991-7430-9a82-07d8310da2dc output_len=14
+2026-06-23 22:16:24,372 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d983-7082-b2ec-0d5d4ab68788
+2026-06-23 22:16:24,372 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d97a-7bf0-b3f0-42798ef73cde
+2026-06-23 22:16:24,372 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d987-7b81-8e94-9658c4f039e0
+2026-06-23 22:16:24,372 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d990-7c02-84ff-8f467b5b95fc
+2026-06-23 22:16:24,373 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d99c-7f33-a259-1068d337b8c6
+2026-06-23 22:16:24,373 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d979-7712-9365-7b0d3df6584f
+2026-06-23 22:16:24,373 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d976-7c23-b543-9a373a11260c
+2026-06-23 22:16:24,373 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d973-7943-bf78-661f08e7a8ff
+2026-06-23 22:16:24,373 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d972-7930-a5be-2608b8c66a18
+2026-06-23 22:16:24,373 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d974-77f2-a29c-e640915bf636
+2026-06-23 22:16:24,374 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d980-7c71-9a63-60900f966c5a
+2026-06-23 22:16:24,374 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d982-7402-be01-11c114bdffef
+2026-06-23 22:16:24,374 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d993-72b3-9a9c-0e3283b8c6ae
+2026-06-23 22:16:24,374 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d971-7bf3-b861-7fd397d9734d
+2026-06-23 22:16:24,374 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d97c-7503-8762-1a1091b1754b
+2026-06-23 22:16:24,374 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d99c-7f33-a259-105c6f28858d
+2026-06-23 22:16:24,375 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d989-7c82-a476-06a8302959f8
+2026-06-23 22:16:24,375 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d99d-7ff1-875b-d9a3122f832f
+2026-06-23 22:16:24,375 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d991-7430-9a82-07d8310da2dc
+2026-06-23 22:16:24,554 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d999-7ef2-aa93-a117d8e85a9b output_len=366
+2026-06-23 22:16:25,037 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d999-7ef2-aa93-a117d8e85a9b
+2026-06-23 22:16:25,266 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d996-76b0-9282-1047d0cfbbee output_len=447
+2026-06-23 22:16:25,369 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d994-7fb3-8199-cd53543b6a4c output_len=863
+2026-06-23 22:16:25,442 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d970-7483-9403-36f5cc32db9b output_len=400
+2026-06-23 22:16:25,724 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d997-7053-867c-5e0b8f5ad5cd output_len=667
+2026-06-23 22:16:25,873 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d99f-7192-910b-bbc863f386a6 output_len=807
+2026-06-23 22:16:26,031 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d972-7930-a5be-261d2f6c650e output_len=637
+2026-06-23 22:16:26,055 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d999-7ef2-aa93-a102acfb7c3f output_len=780
+2026-06-23 22:16:26,328 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d993-72b3-9a9c-0e25b868ebb9 output_len=1102
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d996-76b0-9282-1047d0cfbbee
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d994-7fb3-8199-cd53543b6a4c
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d970-7483-9403-36f5cc32db9b
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d997-7053-867c-5e0b8f5ad5cd
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d99f-7192-910b-bbc863f386a6
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d972-7930-a5be-261d2f6c650e
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d999-7ef2-aa93-a102acfb7c3f
+2026-06-23 22:16:26,815 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d993-72b3-9a9c-0e25b868ebb9
+2026-06-23 22:16:26,919 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d99a-7941-b0b4-44a0bb7e62ca output_len=943
+2026-06-23 22:16:27,154 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d99a-7941-b0b4-44a0bb7e62ca
+2026-06-23 22:16:27,162 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d97e-7201-8972-d65a76147cf1 output_len=786
+2026-06-23 22:16:27,383 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d99b-7ee0-8b8e-5298acb6c49b output_len=1006
+2026-06-23 22:16:27,642 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d97e-7201-8972-d65a76147cf1
+2026-06-23 22:16:27,642 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d99b-7ee0-8b8e-5298acb6c49b
+2026-06-23 22:16:27,997 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d969-7013-9370-f5e0fd42a2c0 output_len=1227
+2026-06-23 22:16:28,138 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d992-7b41-b768-68bf8d3fba9b output_len=1042
+2026-06-23 22:16:28,282 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d998-7670-a776-28905d5f0176 output_len=1310
+2026-06-23 22:16:28,371 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d995-7db0-86d1-6f4771354ce1 output_len=1130
+2026-06-23 22:16:28,480 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d996-76b0-9282-1039b318e3d6 output_len=1304
+2026-06-23 22:16:28,483 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96d-7fa0-8c89-a2f2cc400666 output_len=1223
+2026-06-23 22:16:28,579 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d960-7c63-88f5-22c2eedf66b3 output_len=1347
+2026-06-23 22:16:28,625 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d966-7423-9599-d0f86f2d9845 output_len=1341
+2026-06-23 22:16:28,944 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d986-76e2-a1f7-fad6e88ed8db output_len=1207
+2026-06-23 22:16:29,195 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d977-7ea3-9890-9ae1c45f4d5d output_len=1118
+2026-06-23 22:16:29,263 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d98e-7262-9b44-b68d2e652095 output_len=1414
+2026-06-23 22:16:29,511 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96a-7eb3-9210-491b06a7c699 output_len=1524
+2026-06-23 22:16:29,946 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d95f-7ed1-8a98-1f7280b8189d output_len=2000
+2026-06-23 22:16:30,113 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96b-71b2-a7c5-b3e04656c528 output_len=1645
+2026-06-23 22:16:30,396 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96b-71b2-a7c5-b3d6ea5c0d9e output_len=1459
+2026-06-23 22:16:30,426 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96e-7453-9d81-4615ef71ace5 output_len=1628
+2026-06-23 22:16:30,669 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d969-7013-9370-f5da3689c110 output_len=1836
+2026-06-23 22:16:30,995 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d963-7363-a139-932c295414f4 output_len=1566
+2026-06-23 22:16:31,494 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d969-7013-9370-f5e0fd42a2c0
+2026-06-23 22:16:31,494 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d992-7b41-b768-68bf8d3fba9b
+2026-06-23 22:16:31,494 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d998-7670-a776-28905d5f0176
+2026-06-23 22:16:31,495 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d995-7db0-86d1-6f4771354ce1
+2026-06-23 22:16:31,495 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d996-76b0-9282-1039b318e3d6
+2026-06-23 22:16:31,495 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96d-7fa0-8c89-a2f2cc400666
+2026-06-23 22:16:31,496 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d960-7c63-88f5-22c2eedf66b3
+2026-06-23 22:16:31,497 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d966-7423-9599-d0f86f2d9845
+2026-06-23 22:16:31,497 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d986-76e2-a1f7-fad6e88ed8db
+2026-06-23 22:16:31,497 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d977-7ea3-9890-9ae1c45f4d5d
+2026-06-23 22:16:31,498 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d98e-7262-9b44-b68d2e652095
+2026-06-23 22:16:31,498 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96a-7eb3-9210-491b06a7c699
+2026-06-23 22:16:31,498 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d95f-7ed1-8a98-1f7280b8189d
+2026-06-23 22:16:31,498 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96b-71b2-a7c5-b3e04656c528
+2026-06-23 22:16:31,498 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96b-71b2-a7c5-b3d6ea5c0d9e
+2026-06-23 22:16:31,499 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96e-7453-9d81-4615ef71ace5
+2026-06-23 22:16:31,499 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d969-7013-9370-f5da3689c110
+2026-06-23 22:16:31,499 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d963-7363-a139-932c295414f4
+2026-06-23 22:16:31,621 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d984-7eb2-bf8d-156ab7472857 output_len=1658
+2026-06-23 22:16:31,809 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d961-7072-9bc1-2de6b797bc18 output_len=1898
+2026-06-23 22:16:31,860 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96f-7c41-8a89-78845ee93374 output_len=2094
+2026-06-23 22:16:32,173 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d984-7eb2-bf8d-156ab7472857
+2026-06-23 22:16:32,174 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d961-7072-9bc1-2de6b797bc18
+2026-06-23 22:16:32,174 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96f-7c41-8a89-78845ee93374
+2026-06-23 22:16:33,237 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d968-73a3-92ad-ea5c87ce60c9 output_len=2777
+2026-06-23 22:16:33,286 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d98b-7183-8a55-53d54d5e7299 output_len=2246
+2026-06-23 22:16:33,778 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d968-73a3-92ad-ea5c87ce60c9
+2026-06-23 22:16:33,778 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d98b-7183-8a55-53d54d5e7299
+2026-06-23 22:16:33,848 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d964-78e3-9ba5-992c063b4579 output_len=2295
+2026-06-23 22:16:34,088 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d964-78e3-9ba5-992c063b4579
+2026-06-23 22:16:34,142 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d96f-7c41-8a89-787bfacab378 output_len=2372
+2026-06-23 22:16:34,384 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d96f-7c41-8a89-787bfacab378
+2026-06-23 22:16:35,141 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d963-7363-a139-9315c978592b output_len=3212
+2026-06-23 22:16:35,883 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d963-7363-a139-9315c978592b
+2026-06-23 22:16:37,225 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d965-7bc2-8040-25bb22386051 output_len=3990
+2026-06-23 22:16:37,467 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d965-7bc2-8040-25bb22386051
+2026-06-23 22:16:38,463 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d95e-7b23-8e75-1643f88efd6e output_len=4072
+2026-06-23 22:16:38,711 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d95e-7b23-8e75-1643f88efd6e
+2026-06-23 22:16:40,046 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef4d6-d962-7682-a33d-0eaf636a6446 output_len=4517
+2026-06-23 22:16:40,289 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef4d6-d962-7682-a33d-0eaf636a6446

@@ -67,3 +67,33 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-23 21:16:15,379 [INFO] server.services.review_service: Auto-labeled PR #3
 2026-06-23 21:16:15,380 [DEBUG] server.services.review_service: Review result cached
 2026-06-23 21:16:15,380 [INFO] server.services.review_service: Post-review actions done for session ecb31089-0914-4c27-8c62-7cb132b40401
+2026-06-23 22:01:59,011 [INFO] server.services.review_service: Reviewing 15 code chunks (filtered from 15 total, mode=full)
+2026-06-23 22:02:47,530 [INFO] server.services.review_service: Post-review actions starting for session 86bdef26-ac61-4beb-a1ee-f80a43c2b0e0
+2026-06-23 22:02:49,668 [INFO] server.services.review_service: Published review summary for session 86bdef26-ac61-4beb-a1ee-f80a43c2b0e0: 70 findings (70 new, 0 carried)
+2026-06-23 22:02:49,668 [INFO] server.services.review_service: Auto-published 70 findings to GitHub
+2026-06-23 22:02:52,490 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 22:02:52,491 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 22:02:52,491 [INFO] server.services.review_service: Post-review actions done for session 86bdef26-ac61-4beb-a1ee-f80a43c2b0e0
+2026-06-23 22:08:05,746 [INFO] server.services.review_service: Commit 46ae59bf already reviewed in session 86bdef26, reusing
+2026-06-23 22:08:05,799 [INFO] server.services.review_service: Session b3e5599d reused 70 findings from 86bdef26 (commit unchanged)
+2026-06-23 22:08:23,145 [INFO] server.services.review_service: Reviewing 15 code chunks (filtered from 15 total, mode=full)
+2026-06-23 22:09:07,040 [INFO] server.services.review_service: Post-review actions starting for session 224f57cf-9e53-41ff-b6cd-4564f77b76b5
+2026-06-23 22:09:09,828 [INFO] server.services.review_service: Published review summary for session 224f57cf-9e53-41ff-b6cd-4564f77b76b5: 77 findings (77 new, 0 carried)
+2026-06-23 22:09:09,829 [INFO] server.services.review_service: Auto-published 77 findings to GitHub
+2026-06-23 22:09:13,275 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 22:09:13,276 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 22:09:13,276 [INFO] server.services.review_service: Post-review actions done for session 224f57cf-9e53-41ff-b6cd-4564f77b76b5
+2026-06-23 22:10:49,993 [INFO] server.services.review_service: Reviewing 15 code chunks (filtered from 15 total, mode=full)
+2026-06-23 22:11:40,250 [INFO] server.services.review_service: Post-review actions starting for session c175ca10-2fe6-4edd-a209-5affd4342582
+2026-06-23 22:11:42,208 [INFO] server.services.review_service: Published review summary for session c175ca10-2fe6-4edd-a209-5affd4342582: 78 findings (78 new, 0 carried)
+2026-06-23 22:11:42,209 [INFO] server.services.review_service: Auto-published 78 findings to GitHub
+2026-06-23 22:11:45,298 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 22:11:45,299 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 22:11:45,299 [INFO] server.services.review_service: Post-review actions done for session c175ca10-2fe6-4edd-a209-5affd4342582
+2026-06-23 22:15:58,056 [INFO] server.services.review_service: Reviewing 15 code chunks (filtered from 15 total, mode=full)
+2026-06-23 22:16:48,502 [INFO] server.services.review_service: Post-review actions starting for session 386aa299-b09c-4558-b2f5-15c9cccda205
+2026-06-23 22:16:51,053 [INFO] server.services.review_service: Published review summary for session 386aa299-b09c-4558-b2f5-15c9cccda205: 77 findings (77 new, 0 carried)
+2026-06-23 22:16:51,054 [INFO] server.services.review_service: Auto-published 77 findings to GitHub
+2026-06-23 22:16:54,240 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 22:16:54,243 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 22:16:54,243 [INFO] server.services.review_service: Post-review actions done for session 386aa299-b09c-4558-b2f5-15c9cccda205
