@@ -85,3 +85,10 @@ Traceback (most recent call last):
     parts.append("### 完整函数上下文（diff 所在函数的完整代码，消除"看不到定义"的误判）\n")
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: invalid syntax. Perhaps you forgot a comma?
+2026-06-23 22:28:27,295 [INFO] server.services.review_service: Reviewing 15 code chunks (filtered from 15 total, mode=full)
+2026-06-23 22:29:30,114 [INFO] server.services.review_service: Post-review actions starting for session bacc8f31-c5c9-424d-9123-a8e7361522db
+2026-06-23 22:29:32,082 [INFO] server.services.review_service: Published review summary for session bacc8f31-c5c9-424d-9123-a8e7361522db: 74 findings (74 new, 0 carried)
+2026-06-23 22:29:32,082 [INFO] server.services.review_service: Auto-published 74 findings to GitHub
+2026-06-23 22:29:36,051 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 22:29:36,052 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 22:29:36,052 [INFO] server.services.review_service: Post-review actions done for session bacc8f31-c5c9-424d-9123-a8e7361522db

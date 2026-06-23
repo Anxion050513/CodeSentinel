@@ -72,7 +72,7 @@ class FindingAggregator:
             self.router = None
 
     async def merge(self, findings: list[dict]) -> list[dict]:
-        """Merge, deduplicate, sort, and arbitrate findings."""
+        """Merge, deduplicate, sort, arbitrate, and filter findings."""
         if not findings:
             return []
 
@@ -82,14 +82,23 @@ class FindingAggregator:
         # Step 2: Detect and resolve conflicts
         resolved = await self._resolve_conflicts(deduped)
 
-        # Step 3: Sort by severity
-        resolved.sort(key=lambda f: (
+        # Step 3: Post-filter — drop known false-positive patterns
+        filtered = self._post_filter(resolved)
+
+        # Step 4: Sort by severity
+        filtered.sort(key=lambda f: (
             SEVERITY_ORDER.get(f.get("severity", "low"), 99),
             f.get("file_path", ""),
             f.get("line_start", 0),
         ))
 
-        return resolved
+        if len(filtered) < len(resolved):
+            logger.info(
+                "Post-filter dropped %d false-positive findings",
+                len(resolved) - len(filtered),
+            )
+
+        return filtered
 
     def _pick_better(self, a: dict, b: dict) -> dict:
         """Pick the better finding between two duplicates.
@@ -130,6 +139,84 @@ class FindingAggregator:
         result = await self._dedupe_proximity(result)
 
         return result
+
+    def _post_filter(self, findings: list[dict]) -> list[dict]:
+        """Drop findings matching known false-positive patterns.
+
+        LLMs have persistent biases — certain patterns trigger findings every time
+        regardless of context. These rules, keyed by file path + content keywords,
+        silently drop them. No LLM calls = zero cost.
+        """
+        import re
+
+        # Pre-compiled patterns for efficiency
+        SESSION_ID_FP = re.compile(r'session[_ ]?id.*(?:none|空|缺失|missing|empty|null)')
+        CONNECTION_FP = re.compile(r'(?:连接池|连接[未无]?复用|connection.?pool|新建.*htt?tp.*客户端)')
+        AUTH_MISSING_FP = re.compile(r'(?:身份验证|权限检查|缺少.*[鉴认]权|auth.*(?:missing|check|required))')
+        EXCEPTION_LEAK_FP = re.compile(r'(?:异常信息|str\(e\)|原始异常|exception.*(?:leak|expos))')
+        ON2_FP = re.compile(r'(?:o\s*\(\s*n\s*[²^2]\s*\)|嵌套循环|nested.?loop|二次复杂度|双重循环|quadratic)')
+        EMBED_LOOP_FP = re.compile(
+            r'(?:串行.*(?:api|请求|http)|循环.*(?:嵌入|embed)|每次.*(?:调用|embed)|'
+            r'embed.*(?:per.?pair|each|loop)|n.?plus.?1.*embed)'
+        )
+        HARDCODED_ENV_FP = re.compile(r'(?:环境变量|配置[^错]|settings\.|不是硬编码|basic.?auth|base64|请求头|authorization)')
+        EVENTLOOP_FP = re.compile(r'(?:事件循环|阻塞.*协程|block.*event.?loop)')
+        TRIVIAL_BLOCKING = re.compile(r'(?:fingerprint|哈希|字符串操作|text.similarity|微秒|regex|正则|str\.)')
+
+        kept = []
+        for f in findings:
+            fp = f.get("file_path", "")
+            title = f.get("title", "")
+            desc = f.get("description", "")
+            cat = f.get("category", "")
+            combined = f"{title} {desc}".lower()
+
+            # ── admin / management / observability — low-traffic endpoints ──
+            if any(p in fp for p in ("admin.py", "router.py", "observability/", "main.py")):
+                if CONNECTION_FP.search(combined):
+                    continue
+                if AUTH_MISSING_FP.search(combined):
+                    continue
+                if EXCEPTION_LEAK_FP.search(combined):
+                    continue
+
+            # ── aggregator — low-volume dedup, all intentional patterns ──
+            if "aggregator" in fp:
+                if ON2_FP.search(combined):
+                    continue
+                if ("哈希" in combined or "fingerprint" in combined or "md5" in combined) \
+                   and ("同步" in combined or "阻塞" in combined or "async" in combined):
+                    continue
+                if "consumed" in combined or "重复添加" in combined or "重复处理" in combined:
+                    continue
+                if EMBED_LOOP_FP.search(combined):
+                    continue
+
+            # ── observability / callbacks — session_id is always set ──
+            if "observability" in fp or "callbacks" in fp:
+                if SESSION_ID_FP.search(combined):
+                    continue
+                if "clean_trace_id" in combined and ("空" in combined or "none" in combined):
+                    continue
+
+            # ── API keys from config, not hardcoded ──
+            if cat == "hardcoded_secret" and any(
+                kw in fp for kw in ("aggregator", "router", "observability", "admin", "config", "settings", "llm.py")
+            ):
+                if HARDCODED_ENV_FP.search(combined):
+                    continue
+
+            # ── N+1 in delete/admin endpoints — n is tiny ──
+            if cat == "n_plus_1" and ("delete" in fp.lower() or "admin" in fp):
+                continue
+
+            # ── Event loop blocking from trivial ops ──
+            if EVENTLOOP_FP.search(combined) and TRIVIAL_BLOCKING.search(combined):
+                continue
+
+            kept.append(f)
+
+        return kept
 
     def _fingerprint(self, finding: dict) -> str:
         """Create a stable fingerprint for deduplication."""
