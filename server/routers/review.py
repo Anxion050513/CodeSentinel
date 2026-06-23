@@ -298,12 +298,12 @@ async def publish_review(
             findings=findings_dicts,
             db=db,
         )
-        comments_posted = min(len(findings), 50)  # GitHub limit
+        findings_count = len(findings)
         await db.commit()
 
         return PublishResponse(
             session_id=session_id,
-            comments_posted=comments_posted,
+            comments_posted=findings_count,  # all findings published in one summary review
             status="published",
         )
     except Exception as e:

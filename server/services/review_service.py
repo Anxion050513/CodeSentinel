@@ -120,7 +120,12 @@ class ReviewService:
         try:
             # Set LangFuse trace context for the entire review pipeline
             from server.observability.callbacks import TraceContext
-            TraceContext.set(session_id=session.id, phase="review")
+            TraceContext.set(
+                session_id=session.id,
+                phase="review",
+                repo=f"{repository.owner}/{repository.repo_name}",
+                pr_number=pr_number,
+            )
 
             from server.services.github_service import GitHubService
             github = GitHubService(repository.github_token_encrypted)
@@ -515,89 +520,118 @@ class ReviewService:
         findings: list[dict],
         db: AsyncSession,
     ):
-        """Post findings as GitHub PR inline comments.
+        """Post a single summary review comment on the GitHub PR.
 
-        For incremental reviews, carried-forward findings (from unchanged files)
-        are skipped — only new findings for changed files are posted.
+        Groups findings by severity and lists them all in one clean comment.
+        For incremental reviews, carried-forward findings are noted but not re-listed.
         """
-        # Separate new findings from carried-forward ones
         new_findings = [f for f in findings if not f.get("_carried_forward")]
         carried_count = len(findings) - len(new_findings)
 
-        comments = []
-        for f in new_findings:
-            comments.append({
-                "path": f["file_path"],
-                "line": f.get("line_end") or f["line_start"],
-                "body": self._format_comment(f),
-            })
+        if not new_findings and not carried_count:
+            logger.info("No findings to publish for session %s", session.id)
+            return
 
-        if comments or carried_count:
-            is_incremental = session.stats.get("review_mode") == "incremental" if session.stats else False
-            if is_incremental:
-                summary_body = (
-                    f"## 🤖 AI Code Review (Δ增量审查)\n\n"
-                    f"本次审查了 {session.stats.get('total_files', 0) if session.stats else 0}"
-                    f" 个变更文件，发现 **{len(new_findings)}** 个新问题"
-                )
-                if carried_count:
-                    summary_body += f"（另有 {carried_count} 个已有问题从未变更的文件中保留）"
-                summary_body += "。\n\n"
-            else:
-                summary_body = (
-                    f"## 🤖 AI 代码审查\n\n"
-                    f"在 {session.stats.get('total_files', 0) if session.stats else 0}"
-                    f" 个文件中发现 **{len(findings)}** 个问题。\n\n"
-                )
-
-            severity_icons = {"critical": "🔴", "high": "🟠", "medium": "🟡", "low": "🟢", "info": "ℹ️"}
-            for f in new_findings[:10]:
-                summary_body += (
-                    f"- {severity_icons.get(f.get('severity', 'low'), 'ℹ️')} "
-                    f"[{f.get('severity', 'low').upper()}] **{f.get('title', '')}** "
-                    f"— `{f.get('file_path', '')}:{f.get('line_start', 0)}`\n"
-                )
-
-            await github.create_review(
-                owner=repository.owner,
-                repo_name=repository.repo_name,
-                pr_number=session.pr_number,
-                commit_sha=session.commit_sha,
-                body=summary_body,
-                event="COMMENT",
-                comments=comments[:50],  # GitHub limits reviews to 50 comments
-            )
-
-            await harness.fire(
-                "on_review_published",
-                session_id=session.id,
-                comments_posted=len(comments[:50]),
-            )
-
-    def _format_comment(self, finding: dict) -> str:
-        """Format a finding as a GitHub comment body (Chinese)."""
-        severity_emoji = {
-            "critical": "🔴", "high": "🟠", "medium": "🟡", "low": "🟢", "info": "ℹ️",
-        }
+        # ── Group by severity ──
+        sev_order = ["critical", "high", "medium", "low", "info"]
+        sev_icons = {"critical": "🔴", "high": "🟠", "medium": "🟡", "low": "🟢", "info": "ℹ️"}
         sev_cn = {"critical": "严重", "high": "高危", "medium": "中危", "low": "低危", "info": "提示"}
-        reviewer_cn = {
-            "security": "安全审查", "performance": "性能审查",
-            "logic": "逻辑审查", "style": "代码风格审查",
-        }
-        emoji = severity_emoji.get(finding.get("severity", "low"), "ℹ️")
-        sev_label = sev_cn.get(finding.get("severity", "low"), finding.get("severity", "low"))
-        reviewer_label = reviewer_cn.get(finding.get("reviewer_name", ""), finding.get("reviewer_name", "unknown"))
-        lines = [
-            f"{emoji} **{finding.get('title', 'Issue')}** `[{sev_label}]`",
-            f"",
-            f"> 🤖 *{reviewer_label}* | `{finding.get('category', 'general')}`",
-            f"",
-            f"**问题:** {finding.get('description', '')}",
-        ]
-        if finding.get("suggestion"):
-            lines.append(f"")
-            lines.append(f"**建议:** {finding['suggestion']}")
-        return "\n".join(lines)
+
+        grouped: dict[str, list[dict]] = {s: [] for s in sev_order}
+        for f in new_findings:
+            sev = f.get("severity", "low")
+            if sev not in grouped:
+                sev = "low"
+            grouped[sev].append(f)
+
+        # ── Build summary body ──
+        total_files = session.stats.get("total_files", 0) if session.stats else 0
+        is_incremental = session.stats.get("review_mode") == "incremental" if session.stats else False
+
+        lines: list[str] = []
+        title_suffix = " (Δ增量)" if is_incremental else ""
+        lines.append(f"## 🤖 AI 代码审查报告{title_suffix}")
+        lines.append("")
+
+        # PR info
+        lines.append(
+            f"**PR**: #{session.pr_number} | "
+            f"**分支**: `{session.branch_name}` → `{session.base_branch}` | "
+            f"**审查文件**: {total_files}个"
+        )
+        lines.append("")
+
+        # Severity summary table
+        lines.append("### 📊 问题汇总")
+        lines.append("")
+        lines.append("| 严重程度 | 数量 |")
+        lines.append("|----------|------|")
+
+        total_shown = 0
+        for sev in sev_order:
+            cnt = len(grouped.get(sev, []))
+            if cnt > 0:
+                lines.append(f"| {sev_icons[sev]} {sev_cn[sev]} | **{cnt}** |")
+                total_shown += cnt
+
+        if carried_count:
+            lines.append(f"| 📋 保留(未变更文件) | {carried_count} |")
+
+        lines.append(f"| **合计** | **{total_shown + carried_count}** |")
+        lines.append("")
+
+        # ── Detailed findings by severity ──
+        lines.append("---")
+        lines.append("")
+
+        for sev in sev_order:
+            items = grouped.get(sev, [])
+            if not items:
+                continue
+            lines.append(f"### {sev_icons[sev]} {sev_cn[sev]} ({len(items)}个)")
+            lines.append("")
+            for f in items:
+                file_path = f.get("file_path", "")
+                line = f.get("line_start", 0)
+                title = f.get("title", "")
+                desc = f.get("description", "")
+                # Truncate long descriptions
+                if len(desc) > 120:
+                    desc = desc[:120] + "…"
+                loc = f"`{file_path}:{line}`" if line else f"`{file_path}`"
+                lines.append(f"- **{title}** {loc}")
+                if desc:
+                    lines.append(f"  > {desc}")
+            lines.append("")
+
+        # Footer
+        lines.append("---")
+        lines.append("")
+        lines.append("> 🤖 由 **AI Code Review Bot** 自动生成")
+
+        summary_body = "\n".join(lines)
+
+        # ── Post as a single PR review (no inline comments) ──
+        await github.create_review(
+            owner=repository.owner,
+            repo_name=repository.repo_name,
+            pr_number=session.pr_number,
+            commit_sha=session.commit_sha,
+            body=summary_body,
+            event="COMMENT",
+        )
+
+        logger.info(
+            "Published review summary for session %s: %d findings (%d new, %d carried)",
+            session.id, total_shown + carried_count, total_shown, carried_count,
+        )
+
+        await harness.fire(
+            "on_review_published",
+            session_id=session.id,
+            comments_posted=1,  # single summary review
+        )
+
 
     async def _post_review_actions(
         self,

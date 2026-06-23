@@ -27,6 +27,12 @@ _trace_chunk_file: contextvars.ContextVar[str] = contextvars.ContextVar(
 _trace_phase: contextvars.ContextVar[str] = contextvars.ContextVar(
     "trace_phase", default="unknown"
 )
+_trace_repo: contextvars.ContextVar[str] = contextvars.ContextVar(
+    "trace_repo", default=""
+)
+_trace_pr_number: contextvars.ContextVar[int] = contextvars.ContextVar(
+    "trace_pr_number", default=0
+)
 
 
 class TraceContext:
@@ -48,6 +54,8 @@ class TraceContext:
         reviewer_name: str = "",
         chunk_file: str = "",
         phase: str = "",
+        repo: str = "",
+        pr_number: int = 0,
     ):
         """Set trace context for the current async task."""
         if session_id:
@@ -58,6 +66,10 @@ class TraceContext:
             _trace_chunk_file.set(chunk_file)
         if phase:
             _trace_phase.set(phase)
+        if repo:
+            _trace_repo.set(repo)
+        if pr_number:
+            _trace_pr_number.set(pr_number)
 
     @classmethod
     def get(cls) -> dict:
@@ -67,6 +79,8 @@ class TraceContext:
             "reviewer_name": _trace_reviewer_name.get(),
             "chunk_file": _trace_chunk_file.get(),
             "phase": _trace_phase.get(),
+            "repo": _trace_repo.get(),
+            "pr_number": _trace_pr_number.get(),
         }
 
     @classmethod
@@ -76,6 +90,8 @@ class TraceContext:
         _trace_reviewer_name.set("")
         _trace_chunk_file.set("")
         _trace_phase.set("unknown")
+        _trace_repo.set("")
+        _trace_pr_number.set(0)
 
 
 # === LangFuse Tracer (custom BaseCallbackHandler) ===
@@ -116,40 +132,52 @@ class LangFuseTracer(BaseCallbackHandler):
         phase = ctx.get("phase", "unknown")
         reviewer = ctx.get("reviewer_name", "")
         chunk_file = ctx.get("chunk_file", "")
+        repo = ctx.get("repo", "")
+        pr_number = ctx.get("pr_number", 0)
 
-        # Build a readable name
+        # Build readable trace name: "repo#PR — review" (e.g. "Anxion050513/wx#131 — review")
+        if repo and pr_number:
+            trace_name = f"{repo}#{pr_number} — {phase}"
+        elif repo:
+            trace_name = f"{repo} — {phase}"
+        elif session_id:
+            trace_name = session_id[:8]  # at least shorter UUID prefix
+        else:
+            trace_name = phase
+
+        # Generation name: "review-security" etc.
         name_parts = [phase]
         if reviewer:
             name_parts.append(reviewer)
-        name = "-".join(name_parts)
+        gen_name = "-".join(name_parts)
 
         metadata = {
             "session_id": session_id,
             "reviewer_name": reviewer,
             "chunk_file": chunk_file,
             "phase": phase,
+            "repo": repo,
+            "pr_number": pr_number,
         }
-        tags = [t for t in [phase, reviewer] if t]
+        tags = [t for t in [phase, reviewer, repo] if t]
 
         try:
             if session_id:
-                # Create a proper trace first, then add generation as child
                 trace = cl.trace(
                     id=session_id,
-                    name=session_id,
+                    name=trace_name,
                     metadata=metadata,
                     tags=tags,
                 )
                 gen = trace.generation(
-                    name=name,
+                    name=gen_name,
                     model=model_name,
                     input=input_data,
                     metadata=metadata,
                 )
             else:
-                # No session — let generation auto-create its own trace
                 gen = cl.generation(
-                    name=name,
+                    name=gen_name,
                     model=model_name,
                     input=input_data,
                     metadata=metadata,
@@ -157,11 +185,11 @@ class LangFuseTracer(BaseCallbackHandler):
                 )
             self._pending[run_id] = gen
             logger.info(
-                "LangFuse generation created: name=%s model=%s run_id=%s",
-                name, model_name, run_id,
+                "LangFuse trace=%s gen=%s model=%s",
+                trace_name, gen_name, model_name,
             )
         except Exception as e:
-            logger.warning("LangFuse create_generation failed: %s", e)
+            logger.warning("LangFuse create_generation failed: %s", e, exc_info=True)
 
     def _end_generation(self, run_id: UUID, output: str, tok: dict | None = None, error: str | None = None):
         """Update and end a pending generation, then flush to langfuse."""
@@ -181,17 +209,21 @@ class LangFuseTracer(BaseCallbackHandler):
             else:
                 gen.update(output=output, usage_details=usage if usage else None)
             gen.end()
-
-            # Flush immediately so data appears in dashboard without delay
-            cl = self.client
-            if cl:
-                cl.flush()
             logger.info(
                 "LangFuse generation ended: run_id=%s output_len=%d",
                 run_id, len(output) if output else 0,
             )
+
+            # Flush immediately so data appears in dashboard without delay
+            cl = self.client
+            if cl:
+                try:
+                    cl.flush()
+                    logger.debug("LangFuse flush OK for run_id=%s", run_id)
+                except Exception as flush_err:
+                    logger.warning("LangFuse flush FAILED for run_id=%s: %s", run_id, flush_err)
         except Exception as e:
-            logger.warning("LangFuse end_generation failed: %s", e)
+            logger.warning("LangFuse end_generation failed: %s", e, exc_info=True)
 
     # ---- Chat model callbacks (langchain 1.x uses these for ChatOpenAI) ----
 
