@@ -16,3 +16,11 @@
 2026-06-23 20:00:56,318 [INFO] server.services.review_service: Auto-labeled PR #3
 2026-06-23 20:00:56,319 [DEBUG] server.services.review_service: Review result cached
 2026-06-23 20:00:56,319 [INFO] server.services.review_service: Post-review actions done for session 23116ea1-69b2-452d-9421-6804368ab6f7
+2026-06-23 20:23:43,270 [INFO] server.services.github_service: Decoded PR #1 diff as latin-1 (UTF-8 failed at byte position with 0x64)
+2026-06-23 20:23:45,197 [INFO] server.services.review_service: Reviewing 20 code chunks (filtered from 74 total, mode=full)
+2026-06-23 20:24:29,027 [INFO] server.services.review_service: Post-review actions starting for session 8895d7e2-4a0a-4912-bcee-87952e5542aa
+2026-06-23 20:24:29,736 [WARNING] server.services.review_service: Auto-publish failed (non-fatal): Client error '401 Unauthorized' for url 'https://api.github.com/repos/Anxion050513/CodeSentinel/issues/1/comments'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-06-23 20:24:32,307 [INFO] server.services.review_service: Auto-labeled PR #1
+2026-06-23 20:24:32,308 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 20:24:32,308 [INFO] server.services.review_service: Post-review actions done for session 8895d7e2-4a0a-4912-bcee-87952e5542aa

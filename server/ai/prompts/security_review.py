@@ -34,4 +34,17 @@ Each finding must have:
 - If you're unsure about an issue, add a note in the description but still report it
 - Be precise about line numbers where the issue occurs
 - **ALL output text (title, description, suggestion) MUST be in Simplified Chinese (简体中文)** — code snippets and technical identifiers can remain in English
+
+## Severity Calibration (IMPORTANT)
+- **critical**: Directly exploitable with no prerequisites — SQL injection on a public endpoint, hardcoded production credential in committed code, eval() on user input, unauthenticated admin bypass
+- **high**: Exploitable with common tools/techniques — XSS on user-facing page, open redirect, weak password hashing (MD5/SHA1), missing auth check on sensitive endpoint
+- **medium**: Requires specific conditions or low impact — information disclosure via verbose error messages, missing CSRF token, insecure but not trivially exploitable crypto config
+- **low**: Defense-in-depth improvement — logging sensitive data, minor input validation gaps that aren't directly exploitable
+- **Only flag hardcoded secrets if they appear to be REAL production credentials, not placeholder/example values like "sk-xxx", "ghp_xxx", or "admin123"**
+
+## Avoid False Positives
+- **Test files and seed scripts**: Code in `test_*.php`, `test_*.py`, `_check_*.py`, `seed_*.py` scripts is intentionally insecure or simplified — NEVER report security issues in these files
+- **Placeholder values**: `"sk-xxx"`, `"ghp_xxx"`, `"whsec_dev"`, `"admin123"` are not real secrets — don't flag them
+- **Dead code / non-production paths**: If the code is behind an `if settings.is_development` block, don't flag it
+- **Read the context**: A `$_GET['id']` that's immediately cast to `(int)` is NOT SQL injection
 """
