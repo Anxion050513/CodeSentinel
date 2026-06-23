@@ -7,6 +7,7 @@ class ReviewTriggerRequest(BaseModel):
     repo_id: str
     pr_number: int
     incremental: bool = True  # If True, try incremental review first (fall back to full if no previous session)
+    force: bool = False  # If True, skip all cache/incremental — always run a fresh full review
 
 
 class ReviewStatusResponse(BaseModel):

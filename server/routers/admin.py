@@ -1,6 +1,8 @@
 """Admin API router — repo management, eval, LangFuse traces, health."""
+import base64
 import logging
 
+import httpx
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -255,46 +257,47 @@ async def get_traces(
     session_id: str = Query(None),
     limit: int = Query(50, ge=1, le=200),
 ):
-    """Query LangFuse traces (if observability is enabled)."""
-    try:
-        from server.observability.langfuse_client import get_langfuse_client
-        mgr = get_langfuse_client()
-        if not mgr.enabled or not mgr.client:
-            return {
-                "enabled": False,
-                "traces": [],
-                "message": "LangFuse is not configured",
-            }
-    except Exception:
-        return {
-            "enabled": False,
-            "traces": [],
-            "message": "LangFuse module not available",
-        }
+    """Query LangFuse traces via REST API (compatible with SDK v4.x)."""
+    pk = settings.langfuse_public_key
+    sk = settings.langfuse_secret_key
+    if not pk or not sk:
+        return {"enabled": False, "traces": [], "message": "LangFuse is not configured"}
+
+    auth = base64.b64encode(f"{pk}:{sk}".encode()).decode()
+    headers = {"Authorization": f"Basic {auth}", "Content-Type": "application/json"}
+    host = settings.langfuse_host.rstrip("/")
 
     try:
-        client = mgr.client
-        if session_id:
-            trace = client.get_trace(session_id)
-            return {
-                "enabled": True,
-                "trace": trace.__dict__ if trace else None,
-            }
-        else:
-            traces = client.fetch_traces(limit=limit)
-            return {
-                "enabled": True,
-                "traces_count": len(traces.data),
-                "traces": [
-                    {
-                        "id": t.id,
-                        "name": t.name,
-                        "timestamp": str(t.timestamp),
-                    }
-                    for t in traces.data
-                ],
-            }
+        async with httpx.AsyncClient(timeout=15) as client:
+            if session_id:
+                clean_id = session_id.replace("-", "")
+                resp = await client.get(
+                    f"{host}/api/public/traces/{clean_id}",
+                    headers=headers,
+                )
+                if resp.status_code == 404:
+                    return {"enabled": True, "trace": None, "message": "Trace not found"}
+                resp.raise_for_status()
+                return {"enabled": True, "trace": resp.json()}
+            else:
+                resp = await client.get(
+                    f"{host}/api/public/traces",
+                    headers=headers,
+                    params={"limit": limit, "orderBy": "timestamp.desc"},
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                traces = data.get("data", [])
+                return {
+                    "enabled": True,
+                    "traces_count": len(traces),
+                    "traces": [
+                        {"id": t.get("id"), "name": t.get("name"), "timestamp": t.get("timestamp")}
+                        for t in traces
+                    ],
+                }
     except Exception as e:
+        logger.warning("LangFuse API query failed: %s", e)
         return {"enabled": True, "error": str(e)}
 
 
@@ -382,6 +385,37 @@ async def list_admin_sessions(
             for s in sessions
         ],
     }
+
+
+# ============================================================
+# Admin — Delete Session
+# ============================================================
+
+@router.delete("/admin/sessions/{session_id}")
+async def delete_session(
+    session_id: str,
+    db: AsyncSession = Depends(get_db),
+):
+    """Delete a review session and all its findings."""
+    result = await db.execute(
+        select(ReviewSession).where(ReviewSession.id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    # Delete associated findings first
+    findings_result = await db.execute(
+        select(ReviewFinding).where(ReviewFinding.session_id == session_id)
+    )
+    for f in findings_result.scalars().all():
+        await db.delete(f)
+
+    await db.delete(session)
+    await db.commit()
+
+    logger.info("Session %s deleted with all findings", session_id[:8])
+    return {"status": "deleted", "session_id": session_id}
 
 
 # ============================================================

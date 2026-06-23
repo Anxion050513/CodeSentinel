@@ -123,6 +123,24 @@ class GitHubService:
             return self._decode_bytes(raw, f"file {path}")
         return ""
 
+    async def post_pr_comment(
+        self,
+        owner: str,
+        repo_name: str,
+        pr_number: int,
+        body: str,
+    ) -> dict:
+        """Post a simple comment on a PR (issue comment).
+
+        Simpler and more reliable than create_review — doesn't require
+        commit_sha or inline comments. PRs are also GitHub Issues.
+        """
+        return await self._request(
+            "POST",
+            f"/repos/{owner}/{repo_name}/issues/{pr_number}/comments",
+            json={"body": body},
+        )
+
     async def post_review_comment(
         self,
         owner: str,

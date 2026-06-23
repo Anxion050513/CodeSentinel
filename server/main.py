@@ -27,6 +27,27 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("chromadb").setLevel(logging.WARNING)
 logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
+# ── Dedicated log files for key subsystems ──
+_workdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# LangFuse observability log (guard against duplicate handlers on hot-reload)
+_lf_logger = logging.getLogger("server.observability")
+if not any(isinstance(h, logging.FileHandler) for h in _lf_logger.handlers):
+    _lf_handler = logging.FileHandler(os.path.join(_workdir, "langfuse.log"), encoding="utf-8")
+    _lf_handler.setLevel(logging.DEBUG)
+    _lf_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+    _lf_logger.addHandler(_lf_handler)
+    _lf_logger.setLevel(logging.DEBUG)
+
+# Publish / GitHub comment log (guard against duplicate handlers on hot-reload)
+_pub_logger = logging.getLogger("server.services.review_service")
+if not any(isinstance(h, logging.FileHandler) for h in _pub_logger.handlers):
+    _pub_handler = logging.FileHandler(os.path.join(_workdir, "publish.log"), encoding="utf-8")
+    _pub_handler.setLevel(logging.DEBUG)
+    _pub_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+    _pub_logger.addHandler(_pub_handler)
+    logging.getLogger("server.services.github_service").addHandler(_pub_handler)
+
 
 # ----- Static files directory -----
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")

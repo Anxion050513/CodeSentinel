@@ -61,9 +61,14 @@ class LLMFactory:
         return ChatOpenAI(**kwargs)
 
     def get_embeddings(self) -> OpenAIEmbeddings:
-        """Get a configured OpenAIEmbeddings instance."""
+        """Get a configured OpenAIEmbeddings instance.
+
+        Uses dedicated embedding credentials (EMBEDDING_API_KEY / EMBEDDING_BASE_URL),
+        NOT the LLM credentials — embeddings may use a different provider (e.g. DashScope).
+        """
+        from server.config import settings
         return OpenAIEmbeddings(
-            api_key=self.api_key,
-            base_url=self.base_url,
-            model=self.embedding_model,
+            api_key=settings.embedding_api_key or self.api_key,
+            base_url=settings.embedding_base_url or self.base_url,
+            model=settings.embedding_model or self.embedding_model,
         )

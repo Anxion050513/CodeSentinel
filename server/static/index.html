@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -58,6 +58,11 @@ input,select { background:var(--bg); border:1px solid var(--border); color:var(-
 .modal h2 { font-size:18px; margin-bottom:16px; }
 .modal label { display:block; font-size:12px; color:var(--muted); margin-bottom:4px; margin-top:12px; }
 pre { background:var(--bg); padding:16px; border-radius:8px; overflow-x:auto; font-size:12px; line-height:1.5; }
+.trace-card { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin-bottom:8px; transition:all 0.15s; }
+.trace-card:hover { border-color:var(--accent); }
+.trace-card .trace-name { font-weight:600; color:var(--accent); font-size:13px; word-break:break-all; }
+.trace-card .trace-meta { font-size:11px; color:var(--muted); margin-top:4px; display:flex; gap:16px; flex-wrap:wrap; }
+.confirm-actions { display:flex; gap:10px; margin-top:16px; }
 </style>
 </head>
 <body>
@@ -112,7 +117,7 @@ pre { background:var(--bg); padding:16px; border-radius:8px; overflow-x:auto; fo
     </div>
 </div>
 
-<!-- ===== 评测结果区（首页直接可见） ===== -->
+<!-- ===== 评测结果区 ===== -->
 <div id="evalSection" class="card section" style="display:none;">
     <h3 style="margin-bottom:12px;">🧪 评测结果</h3>
     <div id="evalContent"></div>
@@ -157,7 +162,7 @@ pre { background:var(--bg); padding:16px; border-radius:8px; overflow-x:auto; fo
     <select id="reviewRepo"><option value="">-- 加载中 --</option></select>
     <label>PR 号</label>
     <input type="number" id="reviewPR" value="1" min="1">
-    <div class="flex" style="margin-top:16px;">
+    <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:12px;"><input type="checkbox" id="reviewForce" style="width:auto;"><span style="color:var(--orange);">⚡ 强制全量审查（跳过缓存，使用最新 prompt）</span></label><div class="flex" style="margin-top:16px;">
         <button type="button" class="big" onclick="triggerReview()">🚀 开始审查</button>
         <button type="button" onclick="closeReviewModal()" style="background:var(--bg);">取消</button>
     </div>
@@ -169,13 +174,13 @@ pre { background:var(--bg); padding:16px; border-radius:8px; overflow-x:auto; fo
 <div class="modal-overlay" id="repoModal">
 <div class="modal">
     <h2>📦 注册 GitHub 仓库</h2>
-    <label>Owner（用户名或组织）</label>
+    <label>Owner</label>
     <input type="text" id="repoOwner" placeholder="例如: Anxion050513">
     <label>Repo Name</label>
     <input type="text" id="repoName" placeholder="例如: wx">
     <label>GitHub Token (PAT)</label>
     <input type="password" id="repoToken" placeholder="ghp_...">
-    <label>Webhook Secret（可自动生成）</label>
+    <label>Webhook Secret</label>
     <input type="text" id="repoSecret" placeholder="留空自动生成">
     <div class="flex" style="margin-top:16px;">
         <button type="button" class="big" onclick="registerRepo()">✅ 注册</button>
@@ -189,15 +194,36 @@ pre { background:var(--bg); padding:16px; border-radius:8px; overflow-x:auto; fo
 <div class="modal-overlay" id="reportModal">
 <div class="modal" style="max-width:700px;">
     <div id="reportContent"></div>
-    <button type="button" onclick="closeReportModal()" style="margin-top:12px;">关闭</button>
+    <div style="display:flex; gap:10px; margin-top:12px; justify-content:space-between; align-items:center;">
+        <div></div>
+        <div class="flex">
+            <button type="button" class="danger" id="reportDeleteBtn" onclick="deleteCurrentSession()" style="display:none;">🗑 删除报告</button>
+            <button type="button" onclick="closeReportModal()">关闭</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ===== 删除确认弹窗 ===== -->
+<div class="modal-overlay" id="deleteConfirmModal">
+<div class="modal" style="max-width:400px; text-align:center;">
+    <h2>⚠️ 确认删除</h2>
+    <p style="margin-bottom:8px;">删除后将<span style="color:var(--red);">永久丢失</span>该审查报告及所有 findings。</p>
+    <p style="color:var(--muted);font-size:13px;" id="deleteTargetInfo"></p>
+    <div class="confirm-actions" style="justify-content:center;">
+        <button type="button" class="danger big" id="deleteConfirmBtn" onclick="confirmDeleteSession()">确认删除</button>
+        <button type="button" onclick="closeDeleteConfirm()" style="background:var(--bg);">取消</button>
+    </div>
+    <div id="deleteStatus" style="margin-top:12px;font-size:13px;"></div>
 </div>
 </div>
 
 <script>
 const API = '/api/v1';
 let sessionsPage = 1, sessionsTotal = 0;
+let pendingDeleteId = null; // session ID to delete after confirmation
+let currentReportSessionId = null; // session ID currently shown in report modal
 
-// Escape user data before interpolating into HTML/JS template literals
 function esc(s) {
     if (s == null) return '';
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/`/g,'&#96;').replace(/\$/g,'&#36;');
@@ -268,7 +294,10 @@ async function loadSessions() {
                 <td><b>${s.total_findings||0}</b></td>
                 <td style="font-size:12px;">${severityMini(s.severity_counts)}</td>
                 <td style="font-size:11px;color:var(--muted);">${fmtDate(s.created_at)}</td>
-                <td><button type="button" onclick="viewReport('${esc(s.id)}',event)" style="font-size:11px;padding:3px 8px;">📄</button></td>
+                <td style="white-space:nowrap;">
+                    <button type="button" onclick="viewReport('${esc(s.id)}',event)" style="font-size:11px;padding:3px 8px;">📄 查看</button>
+                    <button type="button" class="danger" onclick="askDeleteSession('${esc(s.id)}','#${esc(s.pr_number)} — ${esc((s.pr_title||'').slice(0,30))}')" style="font-size:11px;padding:3px 8px;">🗑</button>
+                </td>
             </tr>`).join('') || '<tr><td colspan="8" style="text-align:center;color:var(--muted);">暂无数据</td></tr>';
     } catch(e) { console.error(e); }
 }
@@ -284,45 +313,32 @@ function prevPage(){ if(sessionsPage>1){sessionsPage--;loadSessions();} }
 function nextPage(){ if(sessionsPage<sessionsTotal){sessionsPage++;loadSessions();} }
 function fmtDate(d){ if(!d)return'--'; return new Date(d).toLocaleString('zh-CN'); }
 
-// AbortController for in-flight report fetch — prevents stale data when modal is closed mid-request
+// ======== Report View & Delete ========
 let reportAbortController = null;
 
 async function viewReport(id, evt) {
-    // Stop event propagation to prevent any side effects on the sessions table
     if (evt) { evt.preventDefault(); evt.stopPropagation(); }
-
     const modal = document.getElementById('reportModal');
     const content = document.getElementById('reportContent');
+    const delBtn = document.getElementById('reportDeleteBtn');
     if (!modal || !content) return;
-
-    // Guard: don't open a second report while one is visible
     if (modal.classList.contains('show')) return;
-
-    // Abort any previous in-flight request
-    if (reportAbortController) {
-        reportAbortController.abort();
-    }
+    if (reportAbortController) { reportAbortController.abort(); }
     reportAbortController = new AbortController();
 
-    // Clean any previous state and show loading indicator
+    currentReportSessionId = id;
     content.innerHTML = '<div style="text-align:center;padding:40px;"><p style="font-size:48px;">⏳</p><p>加载审查报告中...</p></div>';
+    delBtn.style.display = 'none';
     modal.classList.add('show');
 
     try {
-        const r = await fetch(API+'/review/'+encodeURIComponent(id)+'/report', {
-            signal: reportAbortController.signal
-        });
-
-        // Guard: if modal was closed while fetching, don't update content
+        const r = await fetch(API+'/review/'+encodeURIComponent(id)+'/report', { signal: reportAbortController.signal });
         if (!modal.classList.contains('show')) return;
-
         if (!r.ok) {
             content.innerHTML = '<p style="color:var(--red);">❌ 加载失败: HTTP '+r.status+'</p><p style="color:var(--muted);">会话可能已被删除或不存在</p>';
             return;
         }
         const d = await r.json();
-
-        // Guard again: modal might have been closed during JSON parsing
         if (!modal.classList.contains('show')) return;
 
         const sevEmoji = {critical:'🔴',high:'🟠',medium:'🟡',low:'🟢',info:'ℹ️'};
@@ -334,7 +350,7 @@ async function viewReport(id, evt) {
         html += '<hr style="border-color:var(--border);margin:12px 0;">';
         var findings = d.findings || [];
         if (findings.length === 0) {
-            html += '<div style="text-align:center;padding:30px;color:var(--muted);"><p style="font-size:36px;">📭</p><p>暂无发现（审查未检测到代码问题）</p></div>';
+            html += '<div style="text-align:center;padding:30px;color:var(--muted);"><p style="font-size:36px;">📭</p><p>暂无发现</p></div>';
         }
         for (var i = 0; i < findings.length; i++) {
             var f = findings[i];
@@ -347,25 +363,60 @@ async function viewReport(id, evt) {
             html += '</div>';
         }
         content.innerHTML = html;
+        delBtn.style.display = 'inline-block';
     } catch(e) {
-        // AbortError: user closed the modal intentionally — silently return
         if (e.name === 'AbortError') return;
-        // Guard: modal might have been closed during the error
         if (!modal.classList.contains('show')) return;
         content.innerHTML = '<p style="color:var(--red);">❌ 加载失败: '+esc(e.message||'未知错误')+'</p>';
     }
 }
+
 function closeReportModal(){
-    // Abort any in-flight report fetch to prevent stale data from being written
-    if (reportAbortController) {
-        reportAbortController.abort();
-        reportAbortController = null;
-    }
+    if (reportAbortController) { reportAbortController.abort(); reportAbortController = null; }
     var modal = document.getElementById('reportModal');
     if (modal) modal.classList.remove('show');
-    // Clear content so stale report data is never shown on next open
     var content = document.getElementById('reportContent');
     if (content) content.innerHTML = '';
+    var delBtn = document.getElementById('reportDeleteBtn');
+    if (delBtn) delBtn.style.display = 'none';
+    currentReportSessionId = null;
+}
+
+function deleteCurrentSession(){
+    if (!currentReportSessionId) return;
+    askDeleteSession(currentReportSessionId, '当前报告');
+}
+
+function askDeleteSession(id, label) {
+    pendingDeleteId = id;
+    document.getElementById('deleteTargetInfo').textContent = '会话: ' + label;
+    document.getElementById('deleteStatus').innerHTML = '';
+    document.getElementById('deleteConfirmModal').classList.add('show');
+}
+
+function closeDeleteConfirm(){
+    document.getElementById('deleteConfirmModal').classList.remove('show');
+    pendingDeleteId = null;
+}
+
+async function confirmDeleteSession() {
+    if (!pendingDeleteId) return;
+    const st = document.getElementById('deleteStatus');
+    st.innerHTML = '⏳ 删除中...';
+    try {
+        const r = await fetch(API+'/admin/sessions/'+encodeURIComponent(pendingDeleteId), {method:'DELETE'});
+        if (r.ok) {
+            st.innerHTML = '<span style="color:var(--green);">✅ 删除成功</span>';
+            // If we were viewing this report, close it
+            if (currentReportSessionId === pendingDeleteId) closeReportModal();
+            setTimeout(() => { closeDeleteConfirm(); loadDashboard(); loadSessions(); }, 800);
+        } else {
+            const e = await r.json();
+            st.innerHTML = '<span style="color:var(--red);">❌ '+(e.detail||'删除失败')+'</span>';
+        }
+    } catch(e) {
+        st.innerHTML = '<span style="color:var(--red);">网络错误</span>';
+    }
 }
 
 // ======== Repos ========
@@ -381,7 +432,6 @@ async function loadRepos() {
                 <td style="font-size:11px;color:var(--muted);">${fmtDate(repo.created_at)}</td>
                 <td><button type="button" class="danger" onclick="deleteRepo('${esc(repo.id)}')" style="font-size:11px;padding:3px 8px;">🗑</button></td>
             </tr>`).join('') || '<tr><td colspan="6" style="text-align:center;color:var(--muted);">暂无仓库</td></tr>';
-        // Also update the review modal dropdown
         const sel = document.getElementById('reviewRepo');
         sel.innerHTML = repos.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.owner)+'/'+esc(r.repo_name)+'</option>').join('')
             || '<option value="">-- 请先注册仓库 --</option>';
@@ -420,11 +470,12 @@ async function triggerReview() {
     const pr = parseInt(document.getElementById('reviewPR').value)||1;
     if(!rid){ alert('请先注册仓库'); return; }
     const st = document.getElementById('reviewStatus');
-    st.innerHTML = '⏳ AI 审查运行中（约 60-120 秒），请稍候...';
+    const force = document.getElementById('reviewForce')?.checked || false;
+    st.innerHTML = force ? '⚡ 强制全量审查中（跳过缓存，约 60-120 秒）...' : '⏳ AI 审查运行中（约 60-120 秒），请稍候...';
     const t0 = Date.now();
     try {
         const r = await fetch(API+'/review/trigger',{method:'POST',headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({repo_id:rid,pr_number:pr})});
+            body:JSON.stringify({repo_id:rid,pr_number:pr,force:force})});
         if(r.ok) {
             const d = await r.json();
             const el = ((Date.now()-t0)/1000).toFixed(0);
@@ -484,20 +535,41 @@ async function runMaintenance() {
 }
 
 // ======== Traces ========
+const LANGFUSE_HOST = 'https://jp.cloud.langfuse.com';
+
 async function loadTraces() {
+    const el = document.getElementById('traceResult');
     try {
         const r = await fetch(API+'/admin/traces?limit=10'); const d = await r.json();
         if(!d.enabled) {
-            document.getElementById('traceResult').innerHTML = '<div class="card"><p style="color:var(--muted);">📭 LangFuse 未启用 — 在 .env 中配置 LANGFUSE_PUBLIC_KEY / SECRET_KEY</p></div>';
+            el.innerHTML = '<div class="card"><p style="color:var(--muted);">📭 LangFuse 未启用 — 在 .env 中配置 LANGFUSE_PUBLIC_KEY / SECRET_KEY</p></div>';
             return;
         }
-        document.getElementById('traceResult').innerHTML =
-            '<div class="card"><p>✅ LangFuse 已连接 · '+(d.traces_count||0)+' 条追踪</p>'+
-            (d.traces||[]).slice(0,8).map(t=>
-                '<div style="padding:4px 0;border-bottom:1px solid var(--border);font-size:12px;">'+
-                '<code>'+t.id+'</code> — '+t.name+' <span style="color:var(--muted);">'+t.timestamp+'</span></div>'
-            ).join('')+'</div>';
-    } catch(e) { console.error(e); }
+        if(d.error) {
+            el.innerHTML = '<div class="card"><p style="color:var(--orange);">⚠️ 查询失败: '+esc(d.error)+'</p></div>';
+            return;
+        }
+        var traces = d.traces||[];
+        var html = '<div class="card" style="margin-bottom:12px;"><p>✅ LangFuse 已连接 · <b>'+(d.traces_count||0)+'</b> 条追踪</p></div>';
+        if (traces.length === 0) {
+            html += '<div class="card"><p style="color:var(--muted);text-align:center;padding:20px;">📭 暂无追踪数据 — 触发一次代码审查后会自动出现</p></div>';
+        }
+        traces.forEach(function(t) {
+            var name = t.name || t.id || '未知';
+            var ts = t.timestamp ? new Date(t.timestamp).toLocaleString('zh-CN') : '';
+            var link = LANGFUSE_HOST + '/trace/' + (t.id||'');
+            html += '<div class="trace-card">';
+            html += '<div class="trace-name">' + esc(name) + '</div>';
+            html += '<div class="trace-meta">';
+            html += '<span>🆔 <code>' + esc((t.id||'').slice(0,16)) + '...</code></span>';
+            html += '<span>🕐 ' + esc(ts) + '</span>';
+            html += '<a class="trace-link" href="' + esc(link) + '" target="_blank">🔗 在 LangFuse 中查看 →</a>';
+            html += '</div></div>';
+        });
+        el.innerHTML = html;
+    } catch(e) {
+        el.innerHTML = '<div class="card"><p style="color:var(--red);">加载失败: '+esc(e.message)+'</p></div>';
+    }
 }
 
 // ======== Init ========
@@ -507,13 +579,21 @@ loadDashboard();loadSessions();loadRepos();
 document.getElementById('reviewModal').addEventListener('click',function(e){if(e.target===this)closeReviewModal();});
 document.getElementById('repoModal').addEventListener('click',function(e){if(e.target===this)closeRepoModal();});
 document.getElementById('reportModal').addEventListener('click',function(e){if(e.target===this)closeReportModal();});
+document.getElementById('deleteConfirmModal').addEventListener('click',function(e){if(e.target===this)closeDeleteConfirm();});
 
-// Close report modal with Escape key
+// Close modals with Escape key
 document.addEventListener('keydown',function(e){
     if (e.key === 'Escape') {
-        var reportModal = document.getElementById('reportModal');
-        if (reportModal && reportModal.classList.contains('show')) {
-            closeReportModal();
+        var modals = ['reportModal','deleteConfirmModal','reviewModal','repoModal'];
+        for (var i=0;i<modals.length;i++) {
+            var m = document.getElementById(modals[i]);
+            if (m && m.classList.contains('show')) {
+                if (modals[i]==='reportModal') closeReportModal();
+                else if (modals[i]==='deleteConfirmModal') closeDeleteConfirm();
+                else if (modals[i]==='reviewModal') closeReviewModal();
+                else if (modals[i]==='repoModal') closeRepoModal();
+                break;
+            }
         }
     }
 });
