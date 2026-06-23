@@ -10,6 +10,7 @@ import logging
 from uuid import UUID
 
 from langchain_core.callbacks import BaseCallbackHandler
+from langfuse.types import TraceContext  # v4.x trace context (moved from hot path)
 
 logger = logging.getLogger(__name__)
 
@@ -160,8 +161,6 @@ class LangFuseTracer(BaseCallbackHandler):
         try:
             # langfuse v4.x: start_observation() creates trace+generation in one call
             # trace_id must be 32 lowercase hex chars (UUID without dashes)
-            from langfuse.types import TraceContext
-
             clean_trace_id = session_id.replace("-", "") if session_id else ""
             gen = cl.start_observation(
                 trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,

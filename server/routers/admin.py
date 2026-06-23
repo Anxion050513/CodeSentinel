@@ -388,6 +388,37 @@ async def list_admin_sessions(
 
 
 # ============================================================
+# Admin — Delete Session
+# ============================================================
+
+@router.delete("/admin/sessions/{session_id}")
+async def delete_session(
+    session_id: str,
+    db: AsyncSession = Depends(get_db),
+):
+    """Delete a review session and all its findings."""
+    result = await db.execute(
+        select(ReviewSession).where(ReviewSession.id == session_id)
+    )
+    session = result.scalar_one_or_none()
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    # Delete associated findings first
+    findings_result = await db.execute(
+        select(ReviewFinding).where(ReviewFinding.session_id == session_id)
+    )
+    for f in findings_result.scalars().all():
+        await db.delete(f)
+
+    await db.delete(session)
+    await db.commit()
+
+    logger.info("Session %s deleted with all findings", session_id[:8])
+    return {"status": "deleted", "session_id": session_id}
+
+
+# ============================================================
 # Admin — GitHub App Integration
 # ============================================================
 

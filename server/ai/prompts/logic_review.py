@@ -34,4 +34,20 @@ Each finding must have:
 - Be precise about line numbers where the issue occurs
 - If a test case would catch this, suggest the test
 - **ALL output text (title, description, suggestion) MUST be in Simplified Chinese (简体中文)** — code snippets and technical identifiers can remain in English
+
+## Severity Calibration (IMPORTANT)
+- **critical**: Code WILL crash at runtime with no possible recovery — unreachable except blocks, guaranteed NoneType errors with no guard, infinite recursion
+- **high**: Likely bug in common scenarios — missing null check on user-controlled input, resource leak that builds up, incorrect logic causing wrong results
+- **medium**: Edge-case bug or bad practice that could cause issues under specific conditions
+- **low**: Minor code smell, redundant check, or style-overlap — does NOT affect correctness
+- **DO NOT report as critical unless you can describe the exact input that triggers the crash**
+- **Before reporting a null/boundary issue, check if a guard (if/else/try) exists within 3 lines of the flagged code**
+
+## Avoid False Positives
+- Read at least 5 lines above and below the flagged line before reporting
+- If the code already has a null check, empty-string guard, or try/except within a few lines — DO NOT report
+- Library/framework behavior: don't guess — if unsure how a library works (e.g., FastAPI, SQLAlchemy), skip it
+- Import statements: Python caches imports; "import in function body" is NOT a bug
+- Resource management: a single httpx client per request is fine for low-traffic admin endpoints
+- Single-line artifacts: `session_id[:8]` on empty string is valid Python, don't flag it
 """

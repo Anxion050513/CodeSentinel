@@ -71,3 +71,191 @@ Traceback (most recent call last):
     trace = cl.trace(
             ^^^^^^^^
 AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 20:00:37,439 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 20:00:38,119 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,119 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,120 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,120 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,120 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,121 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,121 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,121 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,121 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — security model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,122 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — performance model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,122 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — logic model=deepseek-chat session=23116ea1
+2026-06-23 20:00:38,122 [INFO] server.observability.callbacks: LangFuse gen created: name=Anxion050513/CodeSentinel#3 — style model=deepseek-chat session=23116ea1
+2026-06-23 20:00:44,124 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e4-7d70-86a8-11e701c667d8 output_len=1238
+2026-06-23 20:00:44,600 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e1-7a22-bdf0-6d40c05c735a output_len=1510
+2026-06-23 20:00:44,719 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e4-7d70-86a8-11e701c667d8
+2026-06-23 20:00:44,719 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e1-7a22-bdf0-6d40c05c735a
+2026-06-23 20:00:46,219 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e3-7352-983f-481e5a9b6643 output_len=1891
+2026-06-23 20:00:46,337 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e3-7352-983f-481e5a9b6643
+2026-06-23 20:00:46,817 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e5-74d2-8097-744c1bbf2167 output_len=1798
+2026-06-23 20:00:46,929 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e5-74d2-8097-744c1bbf2167
+2026-06-23 20:00:47,476 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e4-7d70-86a8-11f87172a7e4 output_len=2158
+2026-06-23 20:00:47,570 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e3-7352-983f-48205138caa5 output_len=2040
+2026-06-23 20:00:47,689 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e4-7d70-86a8-11f87172a7e4
+2026-06-23 20:00:47,689 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e3-7352-983f-48205138caa5
+2026-06-23 20:00:47,884 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96df-7963-80ee-e6a6d09267a3 output_len=2092
+2026-06-23 20:00:47,946 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e1-7a22-bdf0-6d52394081f0 output_len=1909
+2026-06-23 20:00:48,049 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e0-7ba3-af60-aa13d68a4d28 output_len=2709
+2026-06-23 20:00:48,154 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e6-7753-91ce-c2775ee6d181 output_len=2025
+2026-06-23 20:00:48,314 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96df-7963-80ee-e6a6d09267a3
+2026-06-23 20:00:48,314 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e1-7a22-bdf0-6d52394081f0
+2026-06-23 20:00:48,314 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e0-7ba3-af60-aa13d68a4d28
+2026-06-23 20:00:48,314 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e6-7753-91ce-c2775ee6d181
+2026-06-23 20:00:49,287 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e6-7753-91ce-c26d31b2d9b9 output_len=2626
+2026-06-23 20:00:49,521 [INFO] server.observability.callbacks: LangFuse gen ended: run_id=019ef45a-96e2-7831-9e60-0e9a75522b08 output_len=2757
+2026-06-23 20:00:49,796 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e6-7753-91ce-c26d31b2d9b9
+2026-06-23 20:00:49,796 [DEBUG] server.observability.callbacks: LangFuse flush OK for run_id=019ef45a-96e2-7831-9e60-0e9a75522b08
+2026-06-23 20:14:28,861 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 20:14:29,558 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_001'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_001'
+2026-06-23 20:14:30,827 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_001'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_001'
+2026-06-23 20:14:32,926 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_002'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_002'
+2026-06-23 20:14:34,288 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_002'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_002'
+2026-06-23 20:14:36,127 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_003'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_003'
+2026-06-23 20:14:36,894 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_003'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_003'
+2026-06-23 20:14:39,967 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_004'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_004'
+2026-06-23 20:14:40,922 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_004'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_004'
+2026-06-23 20:14:42,208 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_005'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_005'
+2026-06-23 20:14:44,239 [WARNING] server.observability.callbacks: LangFuse create_generation failed: invalid literal for int() with base 16: 'evaleval_005'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    gen = cl.start_observation(
+        trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+    ...<4 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 611, in start_observation
+    remote_parent_span = self._create_remote_parent_span(
+        trace_id=trace_id, parent_span_id=parent_span_id
+    )
+  File "C:\Users\17916\Desktop\CodeSentinel\.venv\Lib\site-packages\langfuse\_client\client.py", line 1638, in _create_remote_parent_span
+    int_trace_id = int(trace_id, 16)
+ValueError: invalid literal for int() with base 16: 'evaleval_005'
