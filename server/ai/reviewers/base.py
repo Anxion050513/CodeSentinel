@@ -145,7 +145,7 @@ class BaseReviewer(ABC):
         # Full function context — the complete functions touched by this diff
         full_funcs = context.get("full_functions", "")
         if full_funcs:
-            parts.append("### 完整函数上下文（diff 所在函数的完整代码，消除"看不到定义"的误判）\n")
+            parts.append('### 完整函数上下文（diff 所在函数的完整代码，消除「看不到定义」的误判）\n')
             parts.append(f"```\n{full_funcs[:6000]}\n```\n")
 
         # Code change

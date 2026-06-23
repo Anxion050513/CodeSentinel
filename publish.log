@@ -67,3 +67,21 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-23 21:16:15,379 [INFO] server.services.review_service: Auto-labeled PR #3
 2026-06-23 21:16:15,380 [DEBUG] server.services.review_service: Review result cached
 2026-06-23 21:16:15,380 [INFO] server.services.review_service: Post-review actions done for session ecb31089-0914-4c27-8c62-7cb132b40401
+2026-06-23 22:26:28,526 [INFO] server.services.review_service: Reviewing 15 code chunks (filtered from 15 total, mode=full)
+2026-06-23 22:27:05,688 [ERROR] server.services.review_service: Review failed for session 0d6ee8fd-fa8a-449c-b1de-d1f56b7365e2: invalid syntax. Perhaps you forgot a comma? (base.py, line 148)
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\services\review_service.py", line 185, in start_review
+    findings = await self._run_parallel_review(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session.id, enriched_chunks, review_rules
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\17916\Desktop\CodeSentinel\server\services\review_service.py", line 420, in _run_parallel_review
+    from server.ai.reviewers.security import SecurityReviewer
+  File "C:\Users\17916\Desktop\CodeSentinel\server\ai\reviewers\security.py", line 2, in <module>
+    from server.ai.reviewers.base import BaseReviewer
+  File "C:\Users\17916\Desktop\CodeSentinel\server\ai\reviewers\base.py", line 148
+    parts.append("### 完整函数上下文（diff 所在函数的完整代码，消除"看不到定义"的误判）\n")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
