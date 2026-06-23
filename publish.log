@@ -24,3 +24,27 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-23 20:24:32,307 [INFO] server.services.review_service: Auto-labeled PR #1
 2026-06-23 20:24:32,308 [DEBUG] server.services.review_service: Review result cached
 2026-06-23 20:24:32,308 [INFO] server.services.review_service: Post-review actions done for session 8895d7e2-4a0a-4912-bcee-87952e5542aa
+2026-06-23 20:29:43,231 [INFO] server.services.review_service: Attempting incremental review for PR #3: f195a407 → 39b821e0
+2026-06-23 20:29:45,911 [INFO] server.services.github_service: Compare f195a407...39b821e0: 5 files, +518/-0
+2026-06-23 20:29:46,087 [INFO] server.services.review_service: Reviewing 3 code chunks (filtered from 3 total, mode=incremental)
+2026-06-23 20:29:59,921 [INFO] server.services.review_service: Carrying forward 25 findings from previous session for 7 unchanged files
+2026-06-23 20:29:59,966 [INFO] server.services.review_service: Post-review actions starting for session 1684ce1b-198f-45cf-ad1e-28e8de0f4c01
+2026-06-23 20:30:01,702 [INFO] server.services.review_service: Published review summary for session 1684ce1b-198f-45cf-ad1e-28e8de0f4c01: 36 findings (11 new, 25 carried)
+2026-06-23 20:30:01,702 [INFO] server.services.review_service: Auto-published 36 findings to GitHub
+2026-06-23 20:30:03,880 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 20:30:03,881 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 20:30:03,881 [INFO] server.services.review_service: Post-review actions done for session 1684ce1b-198f-45cf-ad1e-28e8de0f4c01
+2026-06-23 20:37:47,425 [INFO] server.services.review_service: Commit 39b821e0 already reviewed in session 1684ce1b, reusing
+2026-06-23 20:37:47,480 [INFO] server.services.review_service: Session f8fcb46d reused 36 findings from 1684ce1b (commit unchanged)
+2026-06-23 20:38:05,012 [INFO] server.services.review_service: Commit 39b821e0 already reviewed in session 1684ce1b, reusing
+2026-06-23 20:38:05,036 [INFO] server.services.review_service: Session 32914af1 reused 36 findings from 1684ce1b (commit unchanged)
+2026-06-23 20:38:32,673 [INFO] server.services.review_service: Attempting incremental review for PR #3: f195a407 → 39b821e0
+2026-06-23 20:38:35,688 [INFO] server.services.github_service: Compare f195a407...39b821e0: 5 files, +518/-0
+2026-06-23 20:38:35,911 [INFO] server.services.review_service: Reviewing 3 code chunks (filtered from 3 total, mode=incremental)
+2026-06-23 20:38:49,987 [INFO] server.services.review_service: Carrying forward 25 findings from previous session for 7 unchanged files
+2026-06-23 20:38:50,029 [INFO] server.services.review_service: Post-review actions starting for session f36fec93-4c76-49e3-8bb6-f4f3a432ae74
+2026-06-23 20:38:51,690 [INFO] server.services.review_service: Published review summary for session f36fec93-4c76-49e3-8bb6-f4f3a432ae74: 28 findings (3 new, 25 carried)
+2026-06-23 20:38:51,691 [INFO] server.services.review_service: Auto-published 28 findings to GitHub
+2026-06-23 20:38:54,055 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 20:38:54,056 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 20:38:54,056 [INFO] server.services.review_service: Post-review actions done for session f36fec93-4c76-49e3-8bb6-f4f3a432ae74

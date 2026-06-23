@@ -740,3 +740,149 @@ Traceback (most recent call last):
     trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
                   ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:49,647 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 20:29:50,536 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,536 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,536 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,536 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,537 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,537 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,538 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,538 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,538 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,538 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,539 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:29:50,539 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:40,235 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 20:38:41,085 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,086 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,086 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,087 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,087 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,088 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,088 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,088 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,088 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,088 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,089 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
+2026-06-23 20:38:41,089 [WARNING] server.observability.callbacks: LangFuse create_generation failed: TraceContext() takes no arguments
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                  ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: TraceContext() takes no arguments
