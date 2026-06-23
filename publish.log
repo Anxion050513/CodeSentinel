@@ -48,3 +48,22 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-23 20:38:54,055 [INFO] server.services.review_service: Auto-labeled PR #3
 2026-06-23 20:38:54,056 [DEBUG] server.services.review_service: Review result cached
 2026-06-23 20:38:54,056 [INFO] server.services.review_service: Post-review actions done for session f36fec93-4c76-49e3-8bb6-f4f3a432ae74
+2026-06-23 20:52:12,288 [INFO] server.services.review_service: Attempting incremental review for PR #3: 39b821e0 → 1ce608b2
+2026-06-23 20:52:15,088 [INFO] server.services.github_service: Compare 39b821e0...1ce608b2: 3 files, +172/-2
+2026-06-23 20:52:15,312 [INFO] server.services.review_service: Reviewing 1 code chunks (filtered from 1 total, mode=incremental)
+2026-06-23 20:52:25,461 [INFO] server.services.review_service: Carrying forward 26 findings from previous session for 7 unchanged files
+2026-06-23 20:52:25,515 [INFO] server.services.review_service: Post-review actions starting for session 65be0dd9-6d58-4b68-b4eb-7f8c49838c3d
+2026-06-23 20:52:27,550 [INFO] server.services.review_service: Published review summary for session 65be0dd9-6d58-4b68-b4eb-7f8c49838c3d: 28 findings (2 new, 26 carried)
+2026-06-23 20:52:27,551 [INFO] server.services.review_service: Auto-published 28 findings to GitHub
+2026-06-23 20:52:29,426 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 20:52:29,427 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 20:52:29,427 [INFO] server.services.review_service: Post-review actions done for session 65be0dd9-6d58-4b68-b4eb-7f8c49838c3d
+2026-06-23 21:13:13,938 [INFO] server.services.review_service: Commit 1ce608b2 already reviewed in session 65be0dd9, reusing
+2026-06-23 21:13:13,991 [INFO] server.services.review_service: Session f6bd2243 reused 28 findings from 65be0dd9 (commit unchanged)
+2026-06-23 21:15:42,356 [INFO] server.services.review_service: Reviewing 11 code chunks (filtered from 11 total, mode=full)
+2026-06-23 21:16:11,006 [INFO] server.services.review_service: Post-review actions starting for session ecb31089-0914-4c27-8c62-7cb132b40401
+2026-06-23 21:16:12,347 [INFO] server.services.review_service: Published review summary for session ecb31089-0914-4c27-8c62-7cb132b40401: 23 findings (23 new, 0 carried)
+2026-06-23 21:16:12,347 [INFO] server.services.review_service: Auto-published 23 findings to GitHub
+2026-06-23 21:16:15,379 [INFO] server.services.review_service: Auto-labeled PR #3
+2026-06-23 21:16:15,380 [DEBUG] server.services.review_service: Review result cached
+2026-06-23 21:16:15,380 [INFO] server.services.review_service: Post-review actions done for session ecb31089-0914-4c27-8c62-7cb132b40401

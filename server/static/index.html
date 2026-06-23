@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -162,7 +162,7 @@ pre { background:var(--bg); padding:16px; border-radius:8px; overflow-x:auto; fo
     <select id="reviewRepo"><option value="">-- 加载中 --</option></select>
     <label>PR 号</label>
     <input type="number" id="reviewPR" value="1" min="1">
-    <div class="flex" style="margin-top:16px;">
+    <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:12px;"><input type="checkbox" id="reviewForce" style="width:auto;"><span style="color:var(--orange);">⚡ 强制全量审查（跳过缓存，使用最新 prompt）</span></label><div class="flex" style="margin-top:16px;">
         <button type="button" class="big" onclick="triggerReview()">🚀 开始审查</button>
         <button type="button" onclick="closeReviewModal()" style="background:var(--bg);">取消</button>
     </div>
@@ -470,11 +470,12 @@ async function triggerReview() {
     const pr = parseInt(document.getElementById('reviewPR').value)||1;
     if(!rid){ alert('请先注册仓库'); return; }
     const st = document.getElementById('reviewStatus');
-    st.innerHTML = '⏳ AI 审查运行中（约 60-120 秒），请稍候...';
+    const force = document.getElementById('reviewForce')?.checked || false;
+    st.innerHTML = force ? '⚡ 强制全量审查中（跳过缓存，约 60-120 秒）...' : '⏳ AI 审查运行中（约 60-120 秒），请稍候...';
     const t0 = Date.now();
     try {
         const r = await fetch(API+'/review/trigger',{method:'POST',headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({repo_id:rid,pr_number:pr})});
+            body:JSON.stringify({repo_id:rid,pr_number:pr,force:force})});
         if(r.ok) {
             const d = await r.json();
             const el = ((Date.now()-t0)/1000).toFixed(0);

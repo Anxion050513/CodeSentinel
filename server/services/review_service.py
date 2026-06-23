@@ -42,18 +42,20 @@ class ReviewService:
         base_branch: str,
         commit_sha: str,
         action: str = "opened",
+        force: bool = False,
     ) -> ReviewSession:
         """Start a new review session and run the pipeline.
 
         Args:
             action: GitHub event action — "opened", "synchronize", or "reopened".
                     "synchronize" triggers incremental review when possible.
+            force: If True, skip all caching and incremental — always run fresh full review.
         """
         # Determine if incremental review is possible
         previous_session = None
         incremental_diff = None
 
-        if action == "synchronize":
+        if action == "synchronize" and not force:
             previous_session = await self._get_last_completed_session(
                 db, repository.id, pr_number
             )

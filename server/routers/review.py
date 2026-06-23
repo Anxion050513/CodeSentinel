@@ -62,8 +62,10 @@ async def trigger_review(
     review_service = ReviewService()
 
     # Determine action: if incremental=True and there might be a previous session,
-    # use "synchronize" to trigger the incremental path
+    # use "synchronize" to trigger the incremental path. force=True always runs full.
     action = "synchronize" if req.incremental else "opened"
+    if req.force:
+        action = "opened"  # force full review, no incremental
 
     try:
         session = await review_service.start_review(
@@ -75,6 +77,7 @@ async def trigger_review(
             base_branch=base.get("ref", ""),
             commit_sha=head.get("sha", ""),
             action=action,
+            force=req.force,
         )
 
         await db.commit()
