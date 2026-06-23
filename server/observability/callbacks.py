@@ -122,7 +122,11 @@ class LangFuseTracer(BaseCallbackHandler):
     # === LangChain callback interface ===
 
     def _create_generation(self, run_id: UUID, model_name: str, input_data):
-        """Create a langfuse generation for the current trace context."""
+        """Create a langfuse generation for the current trace context.
+
+        Uses langfuse v4.x API: start_observation() with trace_context.
+        The trace is auto-created on first observation referencing a given trace_id.
+        """
         cl = self.client
         if cl is None:
             return
@@ -135,21 +139,13 @@ class LangFuseTracer(BaseCallbackHandler):
         repo = ctx.get("repo", "")
         pr_number = ctx.get("pr_number", 0)
 
-        # Build readable trace name: "repo#PR — review" (e.g. "Anxion050513/wx#131 — review")
+        # Build readable observation name: "repo#PR — security" (trace name = first gen's name)
         if repo and pr_number:
-            trace_name = f"{repo}#{pr_number} — {phase}"
-        elif repo:
-            trace_name = f"{repo} — {phase}"
-        elif session_id:
-            trace_name = session_id[:8]  # at least shorter UUID prefix
+            gen_name = f"{repo}#{pr_number} — {reviewer}" if reviewer else f"{repo}#{pr_number} — {phase}"
+        elif reviewer:
+            gen_name = f"{phase}-{reviewer}"
         else:
-            trace_name = phase
-
-        # Generation name: "review-security" etc.
-        name_parts = [phase]
-        if reviewer:
-            name_parts.append(reviewer)
-        gen_name = "-".join(name_parts)
+            gen_name = phase
 
         metadata = {
             "session_id": session_id,
@@ -162,37 +158,29 @@ class LangFuseTracer(BaseCallbackHandler):
         tags = [t for t in [phase, reviewer, repo] if t]
 
         try:
-            if session_id:
-                trace = cl.trace(
-                    id=session_id,
-                    name=trace_name,
-                    metadata=metadata,
-                    tags=tags,
-                )
-                gen = trace.generation(
-                    name=gen_name,
-                    model=model_name,
-                    input=input_data,
-                    metadata=metadata,
-                )
-            else:
-                gen = cl.generation(
-                    name=gen_name,
-                    model=model_name,
-                    input=input_data,
-                    metadata=metadata,
-                    tags=tags,
-                )
+            # langfuse v4.x: start_observation() creates trace+generation in one call
+            # trace_id must be 32 lowercase hex chars (UUID without dashes)
+            from langfuse.types import TraceContext
+
+            clean_trace_id = session_id.replace("-", "") if session_id else ""
+            gen = cl.start_observation(
+                trace_context=TraceContext(trace_id=clean_trace_id) if clean_trace_id else None,
+                name=gen_name,
+                as_type="generation",
+                model=model_name,
+                input=input_data,
+                metadata=metadata,
+            )
             self._pending[run_id] = gen
             logger.info(
-                "LangFuse trace=%s gen=%s model=%s",
-                trace_name, gen_name, model_name,
+                "LangFuse gen created: name=%s model=%s session=%s",
+                gen_name, model_name, session_id[:8] if session_id else "-",
             )
         except Exception as e:
             logger.warning("LangFuse create_generation failed: %s", e, exc_info=True)
 
     def _end_generation(self, run_id: UUID, output: str, tok: dict | None = None, error: str | None = None):
-        """Update and end a pending generation, then flush to langfuse."""
+        """Update and end a pending generation, then flush to langfuse (v4.x API)."""
         gen = self._pending.pop(run_id, None)
         if gen is None:
             return
@@ -205,12 +193,12 @@ class LangFuseTracer(BaseCallbackHandler):
                     usage["total"] = tok["total_tokens"]
 
             if error:
-                gen.update(status_message=error[:500], level="ERROR")
+                gen.update(output=output or "", status_message=error[:500], level="ERROR")
             else:
-                gen.update(output=output, usage_details=usage if usage else None)
+                gen.update(output=output or "", usage_details=usage if usage else None)
             gen.end()
             logger.info(
-                "LangFuse generation ended: run_id=%s output_len=%d",
+                "LangFuse gen ended: run_id=%s output_len=%d",
                 run_id, len(output) if output else 0,
             )
 

@@ -1,0 +1,73 @@
+2026-06-23 19:47:13,815 [INFO] server.observability.langfuse_client: LangFuse observability enabled (host: https://jp.cloud.langfuse.com)
+2026-06-23 19:47:27,936 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,936 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,936 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,936 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,937 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,937 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,937 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,937 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,938 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,938 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,938 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
+2026-06-23 19:47:27,938 [WARNING] server.observability.callbacks: LangFuse create_generation failed: 'Langfuse' object has no attribute 'trace'
+Traceback (most recent call last):
+  File "C:\Users\17916\Desktop\CodeSentinel\server\observability\callbacks.py", line 166, in _create_generation
+    trace = cl.trace(
+            ^^^^^^^^
+AttributeError: 'Langfuse' object has no attribute 'trace'
