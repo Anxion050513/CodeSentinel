@@ -611,14 +611,12 @@ class ReviewService:
 
         summary_body = "\n".join(lines)
 
-        # ── Post as a single PR review (no inline comments) ──
-        await github.create_review(
+        # ── Post as a simple PR comment (more reliable than create_review) ──
+        await github.post_pr_comment(
             owner=repository.owner,
             repo_name=repository.repo_name,
             pr_number=session.pr_number,
-            commit_sha=session.commit_sha,
             body=summary_body,
-            event="COMMENT",
         )
 
         logger.info(

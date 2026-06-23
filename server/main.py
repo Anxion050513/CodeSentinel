@@ -27,6 +27,23 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("chromadb").setLevel(logging.WARNING)
 logging.getLogger("sqlalchemy.engine").setLevel(logging.WARNING)
 
+# ── Dedicated log files for key subsystems ──
+_workdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# LangFuse observability log
+_lf_handler = logging.FileHandler(os.path.join(_workdir, "langfuse.log"), encoding="utf-8")
+_lf_handler.setLevel(logging.DEBUG)
+_lf_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+logging.getLogger("server.observability").addHandler(_lf_handler)
+logging.getLogger("server.observability").setLevel(logging.DEBUG)
+
+# Publish / GitHub comment log
+_pub_handler = logging.FileHandler(os.path.join(_workdir, "publish.log"), encoding="utf-8")
+_pub_handler.setLevel(logging.DEBUG)
+_pub_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
+logging.getLogger("server.services.review_service").addHandler(_pub_handler)
+logging.getLogger("server.services.github_service").addHandler(_pub_handler)
+
 
 # ----- Static files directory -----
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
